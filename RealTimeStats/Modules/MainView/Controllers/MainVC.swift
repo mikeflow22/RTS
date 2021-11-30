@@ -73,6 +73,9 @@ class MainVC: UIViewController {
     weak var reloadQStatsTableView: ReloadQStatsTableView?
     
     //MARK: - Properties
+    var mockTournament: Tournament?
+    var mockAwayTeam: Team?
+    var mockHomeTeam: Team?
     var tc: TournamentController? {
         didSet {
             print("tc was set in MainVC")
@@ -83,7 +86,6 @@ class MainVC: UIViewController {
             print("Game was set in MainVC")
         }
     }
-    
     var play: Play? {
         didSet {
             if let newPlay = play {
@@ -98,13 +100,11 @@ class MainVC: UIViewController {
             }
         }
     }
-    
     var action: Action? {
         didSet {
             print("Action was set in MainVC and/or action was set to nil")
         }
     }
-    
     var playerFoulLimit: Int?
     var foulBonusLimit: Int?
     var foulDoubleBonusLimit: Int?
@@ -278,9 +278,6 @@ class MainVC: UIViewController {
         }
     }
     
-    var mockTournament: Tournament?
-    var mockAwayTeam: Team?
-    var mockHomeTeam: Team?
     
     func setUPMockTournament() {
         mockTournament = Tournament(name: "Fake")
@@ -290,7 +287,6 @@ class MainVC: UIViewController {
         let homeTeam = MockTeams.homeTeam
         let mockGame = Game(homeTeam: homeTeam, awayTeam: awayTeam)
         self.game = mockGame
-        
         
         //Team names
         awayTeamNameLabel.text = game?.awayTeam.name
@@ -319,7 +315,6 @@ class MainVC: UIViewController {
         super.viewDidLoad()
         setUPMockTournament()
 //        setupScoreboard(fromTournamentController: self.tc)
-        
         
         //Top Guest/Hosts Segment Bottom
         imgTopSegmentBottomBorder = UIImageView.init(frame: CGRect.init(x: 0, y: 47, width: topSegmentView.frame.width/2, height: 3))
@@ -378,6 +373,7 @@ class MainVC: UIViewController {
 //        let shot = Shot(location: location, stats: .missedA3pt)
 ////        let action = Action(breaks: <#T##Breaks#>, time: <#T##Double#>, stat: /*shot: Shot  */)
 //    }
+    
     func captureAction(withStat: Stats) -> Action {
         if let breaks = self.breaks, let time = gameTimeLabel.convertToDouble() {
             ///ActionViewModel/Controller
@@ -492,10 +488,7 @@ class MainVC: UIViewController {
                 self.view.layoutIfNeeded()
             })
         }
-        
     }
-    
-    
     
     /// Top Header left view extend and collapse handler
     /// - Parameter sender: UIButton
@@ -551,7 +544,6 @@ class MainVC: UIViewController {
                 self.view.layoutIfNeeded()
             })
         }
-        
     }
     
     /// Top Header right view extend and collapse handler
@@ -579,7 +571,6 @@ class MainVC: UIViewController {
                 self.view.layoutIfNeeded()
             })
         }
-        
     }
     
     ///Top Segment Guest Button

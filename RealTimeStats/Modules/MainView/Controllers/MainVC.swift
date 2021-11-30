@@ -390,11 +390,11 @@ class MainVC: UIViewController {
     @IBAction func offensiveFoulButtonPressed(_ sender: UIButton) {
         print("off.foul button pressed")
         //actionViewModel
-        let shot = Shot(location: CGPoint(x: 453.0, y: 245.94), stats: .missedA3pt, success: false)
-        let shotAction = Action(breaks: .quarters, time: 00.00, stat: shot.stats, shot: shot)
-//        let action = captureAction(withStat: .offFoul)
-        passActionToHomeTeam?.actionToPass(shotAction)
-        passActionToAwayTeam?.actionToPass(shotAction)
+//        let shot = Shot(location: CGPoint(x: 453.0, y: 245.94), stats: .missedA3pt, success: false)
+//        let shotAction = Action(breaks: .quarters, time: 00.00, stat: shot.stats, shot: shot)
+        let action = captureAction(withStat: .offFoul)
+        passActionToHomeTeam?.actionToPass(action)
+        passActionToAwayTeam?.actionToPass(action)
     }
     
     @IBAction func deffensiveFoulButtonPressed(_ sender: UIButton) {

@@ -208,8 +208,8 @@
             <connections>
                 <outlet property="assistLabel" destination="t2J-IP-XER" id="OZK-r8-cMU"/>
                 <outlet property="playerNameLabel" destination="7EG-8j-nA1" id="qdM-qx-HiL"/>
-                <outlet property="pointsLabel" destination="ddv-ol-H94" id="0qF-t7-JHp"/>
-                <outlet property="reboundLabel" destination="E6Q-Vf-deI" id="dEg-Wh-6Si"/>
+                <outlet property="pointsLabel" destination="E6Q-Vf-deI" id="zWK-w7-1Ot"/>
+                <outlet property="reboundLabel" destination="ddv-ol-H94" id="l4g-Zt-OoM"/>
             </connections>
             <point key="canvasLocation" x="89.855072463768124" y="61.607142857142854"/>
         </tableViewCell>

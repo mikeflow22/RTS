@@ -188,7 +188,7 @@ extension HomeTeamViewController: UITableViewDelegate {
     
     /// Height For Row At indexPath
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 95.0
+        return 105.0
     }
     
     /// Table Header Height
@@ -198,6 +198,6 @@ extension HomeTeamViewController: UITableViewDelegate {
     
     /// Table Footer Height
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 80
+        return 0
     }
 }

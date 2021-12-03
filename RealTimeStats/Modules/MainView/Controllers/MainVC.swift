@@ -154,6 +154,9 @@ class MainVC: UIViewController {
     @IBOutlet weak var playByPlayHeaderExpandViewHeightConstraint: NSLayoutConstraint!
     /// Top Left Header Expand View Status Check
     var isExpandPlayByPlay:Bool = false
+    /// Top Container View Constraint
+    @IBOutlet weak var playByPlayTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var playByPlayLbl: UILabel!
     
     @IBOutlet weak var editBtnView: UIView! {
         didSet {
@@ -517,9 +520,13 @@ class MainVC: UIViewController {
         
         if isExpandPlayByPlay == false {
             view.layoutIfNeeded()
+            self.playByPlayLbl.isHidden = false
+            self.editBtnView.isHidden = false
+            playByPlayTopConstraint.constant = 89.0
             playByPlayHeaderExpandViewHeightConstraint.constant = 350
             isExpandPlayByPlay = true
-            
+            self.PlayBtPlayListView.backgroundColor = UIColor(hexString: "#C1FBFF").withAlphaComponent(0.42)
+            //self.PlayBtPlayListView.isOpaque = true
             UIView.animate(withDuration: 0.3) {
                 self.view.layoutIfNeeded()
             } completion: { success in
@@ -529,8 +536,13 @@ class MainVC: UIViewController {
             
         } else {
             view.layoutIfNeeded()
+            self.playByPlayLbl.isHidden = true
+            self.editBtnView.isHidden = true
+            playByPlayTopConstraint.constant = 5.0
             self.playByPlayHeaderExpandViewHeightConstraint.constant = 90
             isExpandPlayByPlay = false
+            self.PlayBtPlayListView.backgroundColor = UIColor.clear
+            //self.PlayBtPlayListView.isOpaque = false
             UIView.animate(withDuration: 0.3, animations: {
                 self.view.layoutIfNeeded()
             })

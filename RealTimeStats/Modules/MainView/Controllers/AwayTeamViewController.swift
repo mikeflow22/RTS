@@ -93,6 +93,7 @@ class AwayTeamViewController: UIViewController {
             }
             self.selectedPlayerRow = -1
             self.isSubstitutionViewOpen = false
+            self.tableView.reloadData()
             
         }
         substitutionView.transform = CGAffineTransform(scaleX: 0, y: 0)
@@ -249,7 +250,7 @@ extension AwayTeamViewController: UITableViewDelegate {
     
     /// Height For Row At indexPath
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 105.0
+        return 97.0
     }
     
     /// Table Header Height

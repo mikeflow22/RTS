@@ -26,19 +26,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="140" height="100"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="61" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjK-su-Fba">
-                                <rect key="frame" x="56.5" y="10" width="27" height="29"/>
+                                <rect key="frame" x="56.5" y="8" width="27" height="29"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Muhamed A." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="2dH-SM-0kp">
-                                <rect key="frame" x="25.5" y="49" width="89" height="18"/>
+                                <rect key="frame" x="25.5" y="45" width="89" height="18"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xj0-u0-U3I">
-                                <rect key="frame" x="47.5" y="77" width="5" height="5"/>
+                                <rect key="frame" x="47.5" y="73" width="5" height="5"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="5" id="EgY-7J-g3U"/>
@@ -54,7 +54,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bf-Sa-dLU">
-                                <rect key="frame" x="57.5" y="77" width="5" height="5"/>
+                                <rect key="frame" x="57.5" y="73" width="5" height="5"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="5" id="djv-bh-cIv"/>
@@ -70,7 +70,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYO-9E-Jr4">
-                                <rect key="frame" x="67.5" y="77" width="5" height="5"/>
+                                <rect key="frame" x="67.5" y="73" width="5" height="5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="5" id="5aI-dd-RDa"/>
@@ -86,7 +86,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCm-2z-Fq4">
-                                <rect key="frame" x="77.5" y="77" width="5" height="5"/>
+                                <rect key="frame" x="77.5" y="73" width="5" height="5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="5" id="OpM-jN-ccg"/>
@@ -102,7 +102,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ls-dH-ai0">
-                                <rect key="frame" x="87.5" y="77" width="5" height="5"/>
+                                <rect key="frame" x="87.5" y="73" width="5" height="5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="5" id="jSM-Ht-hWa"/>
@@ -127,8 +127,8 @@
                             <constraint firstItem="Xj0-u0-U3I" firstAttribute="centerY" secondItem="3bf-Sa-dLU" secondAttribute="centerY" id="RW1-A7-3zW"/>
                             <constraint firstItem="cYO-9E-Jr4" firstAttribute="centerX" secondItem="2dH-SM-0kp" secondAttribute="centerX" id="Wow-nB-exL"/>
                             <constraint firstItem="3bf-Sa-dLU" firstAttribute="leading" secondItem="Xj0-u0-U3I" secondAttribute="trailing" constant="5" id="aRY-dk-dDZ"/>
-                            <constraint firstItem="IjK-su-Fba" firstAttribute="top" secondItem="wdl-Po-htw" secondAttribute="top" constant="10" id="dRV-I0-BXT"/>
-                            <constraint firstItem="2dH-SM-0kp" firstAttribute="top" secondItem="IjK-su-Fba" secondAttribute="bottom" constant="10" id="ec5-B6-yxZ"/>
+                            <constraint firstItem="IjK-su-Fba" firstAttribute="top" secondItem="wdl-Po-htw" secondAttribute="top" constant="8" id="dRV-I0-BXT"/>
+                            <constraint firstItem="2dH-SM-0kp" firstAttribute="top" secondItem="IjK-su-Fba" secondAttribute="bottom" constant="8" id="ec5-B6-yxZ"/>
                             <constraint firstItem="cYO-9E-Jr4" firstAttribute="top" secondItem="2dH-SM-0kp" secondAttribute="bottom" constant="10" id="gJU-dG-tUK"/>
                             <constraint firstItem="3Ls-dH-ai0" firstAttribute="centerY" secondItem="QCm-2z-Fq4" secondAttribute="centerY" id="kDM-ie-GCf"/>
                             <constraint firstItem="3bf-Sa-dLU" firstAttribute="centerY" secondItem="cYO-9E-Jr4" secondAttribute="centerY" id="kDi-bA-dyH"/>

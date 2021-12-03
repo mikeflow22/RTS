@@ -494,10 +494,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ju-aX-Igj">
-                                        <rect key="frame" x="0.0" y="10" width="337" height="80"/>
+                                        <rect key="frame" x="0.0" y="10" width="397" height="80"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ecb-iF-Exi">
-                                                <rect key="frame" x="0.0" y="0.0" width="337" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="397" height="80"/>
                                                 <connections>
                                                     <segue destination="dw0-hK-fal" kind="embed" identifier="toPlayByPlayChild" id="1hw-ye-wEE"/>
                                                 </connections>
@@ -511,7 +511,7 @@
                                             <constraint firstAttribute="bottom" secondItem="Ecb-iF-Exi" secondAttribute="bottom" id="jJW-Gf-Fnw"/>
                                         </constraints>
                                     </view>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a4h-ca-eel">
+                                    <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a4h-ca-eel">
                                         <rect key="frame" x="347" y="30.5" width="30" height="30"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nis-vB-xXF">
@@ -556,7 +556,7 @@
                                     <constraint firstItem="9Ju-aX-Igj" firstAttribute="top" secondItem="ZJ6-Dq-9O0" secondAttribute="top" constant="10" id="Sxg-SS-ySE"/>
                                     <constraint firstItem="B3L-Nd-E7z" firstAttribute="leading" secondItem="ZJ6-Dq-9O0" secondAttribute="leading" constant="20" id="cjt-4J-h3b"/>
                                     <constraint firstItem="9Ju-aX-Igj" firstAttribute="leading" secondItem="ZJ6-Dq-9O0" secondAttribute="leading" id="m2Y-ce-K9e"/>
-                                    <constraint firstItem="a4h-ca-eel" firstAttribute="leading" secondItem="9Ju-aX-Igj" secondAttribute="trailing" constant="10" id="zkm-xl-fKI"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Ju-aX-Igj" secondAttribute="trailing" id="yZ2-8Q-tIc"/>
                                     <constraint firstAttribute="bottom" secondItem="9Ju-aX-Igj" secondAttribute="bottom" id="zxr-Qy-vhK"/>
                                 </constraints>
                             </view>
@@ -1180,6 +1180,8 @@
                         <outlet property="homeTeamView" destination="alk-zq-kD3" id="rDw-BM-1L3"/>
                         <outlet property="playByPlayExpendView" destination="clN-hS-ugL" id="BH1-x2-rnp"/>
                         <outlet property="playByPlayHeaderExpandViewHeightConstraint" destination="7Ye-sp-nwh" id="BJC-W8-B48"/>
+                        <outlet property="playByPlayLbl" destination="B3L-Nd-E7z" id="E7n-oN-MO8"/>
+                        <outlet property="playByPlayTopConstraint" destination="Sxg-SS-ySE" id="LVm-lh-MHH"/>
                         <outlet property="quickStatsHeaderExpandViewHeightConstraint" destination="v8t-GI-rzG" id="wjY-91-zNQ"/>
                         <outlet property="quickStatsHeaderExpendView" destination="WDi-05-Qfi" id="I1A-xs-y8z"/>
                         <outlet property="scoreBoardHeaderExpendView" destination="n8Q-pz-3Wc" id="Uqp-Pq-bKj"/>
@@ -1295,7 +1297,7 @@
         <scene sceneID="4PV-cL-j9c">
             <objects>
                 <viewController storyboardIdentifier="PlayByPlayVC" id="dw0-hK-fal" customClass="PlayByPlayVC" customModule="RealTimeStats" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8Bf-el-Bb5">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="8Bf-el-Bb5">
                         <rect key="frame" x="0.0" y="0.0" width="372" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1340,7 +1342,7 @@
         <scene sceneID="Ne5-jK-Srx">
             <objects>
                 <viewController storyboardIdentifier="GuestHostsVC" id="Mu0-P0-TpG" customClass="QuickStatsViewController" customModule="RealTimeStats" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ffh-Y9-Rhi">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="ffh-Y9-Rhi">
                         <rect key="frame" x="0.0" y="0.0" width="372" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1390,7 +1392,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NW3-bh-Yeb">
-                                <rect key="frame" x="10" y="90" width="114" height="555"/>
+                                <rect key="frame" x="10" y="80" width="114" height="575"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="oiG-XJ-jG8" customClass="PlayerTVCell" customModule="RealTimeStats" customModuleProvider="target">
@@ -1435,9 +1437,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NW3-bh-Yeb" firstAttribute="leading" secondItem="fyD-fB-LCL" secondAttribute="leading" constant="10" id="WJb-wE-AH8"/>
-                            <constraint firstAttribute="bottom" secondItem="NW3-bh-Yeb" secondAttribute="bottom" constant="10" id="ffr-za-gzj"/>
+                            <constraint firstAttribute="bottom" secondItem="NW3-bh-Yeb" secondAttribute="bottom" id="ffr-za-gzj"/>
                             <constraint firstAttribute="trailing" secondItem="NW3-bh-Yeb" secondAttribute="trailing" constant="10" id="jwo-tL-f3f"/>
-                            <constraint firstItem="NW3-bh-Yeb" firstAttribute="top" secondItem="C7a-lv-NiC" secondAttribute="bottom" constant="20" id="m9k-x9-8SU"/>
+                            <constraint firstItem="NW3-bh-Yeb" firstAttribute="top" secondItem="C7a-lv-NiC" secondAttribute="bottom" constant="10" id="m9k-x9-8SU"/>
                             <constraint firstItem="C7a-lv-NiC" firstAttribute="centerX" secondItem="fyD-fB-LCL" secondAttribute="centerX" id="ony-eT-Onf"/>
                             <constraint firstItem="C7a-lv-NiC" firstAttribute="top" secondItem="fyD-fB-LCL" secondAttribute="top" constant="20" id="ukv-5m-vSm"/>
                         </constraints>
@@ -1460,7 +1462,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="djr-jI-ebt">
-                                <rect key="frame" x="10" y="90" width="114" height="555"/>
+                                <rect key="frame" x="10" y="80" width="114" height="575"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="X3d-r7-dNb" customClass="PlayerTVCell" customModule="RealTimeStats" customModuleProvider="target">
@@ -1508,8 +1510,8 @@
                             <constraint firstAttribute="trailing" secondItem="djr-jI-ebt" secondAttribute="trailing" constant="10" id="UVo-rp-zUG"/>
                             <constraint firstItem="srj-d9-kLW" firstAttribute="top" secondItem="eRb-AN-s1B" secondAttribute="top" constant="20" id="eNo-19-p2V"/>
                             <constraint firstItem="srj-d9-kLW" firstAttribute="centerX" secondItem="eRb-AN-s1B" secondAttribute="centerX" id="eeJ-tG-yH7"/>
-                            <constraint firstItem="djr-jI-ebt" firstAttribute="top" secondItem="srj-d9-kLW" secondAttribute="bottom" constant="20" id="mE4-W0-rE4"/>
-                            <constraint firstAttribute="bottom" secondItem="djr-jI-ebt" secondAttribute="bottom" constant="10" id="mNd-tq-Nbn"/>
+                            <constraint firstItem="djr-jI-ebt" firstAttribute="top" secondItem="srj-d9-kLW" secondAttribute="bottom" constant="10" id="mE4-W0-rE4"/>
+                            <constraint firstAttribute="bottom" secondItem="djr-jI-ebt" secondAttribute="bottom" id="mNd-tq-Nbn"/>
                         </constraints>
                     </view>
                     <connections>

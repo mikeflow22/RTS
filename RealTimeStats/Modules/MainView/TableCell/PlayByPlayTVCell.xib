@@ -44,19 +44,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Kotishevski A." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snl-0h-NlR">
-                                <rect key="frame" x="94" y="18.5" width="90" height="14"/>
+                                <rect key="frame" x="95" y="18.5" width="55" height="14"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="phu-86-dxx"/>
+                                    <constraint firstAttribute="width" constant="55" id="8l5-8l-AWB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Made Freethrow" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuI-pE-w8K">
-                                <rect key="frame" x="192" y="18.5" width="192" height="14.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="KY5-vR-Obp"/>
-                                </constraints>
+                                <rect key="frame" x="155" y="18.5" width="94" height="14.5"/>
                                 <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -64,16 +61,14 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="snl-0h-NlR" firstAttribute="centerY" secondItem="weY-ko-pkB" secondAttribute="centerY" id="ALe-df-EqX"/>
-                            <constraint firstItem="snl-0h-NlR" firstAttribute="leading" secondItem="hOt-ba-OoP" secondAttribute="trailing" constant="1" id="HGe-b7-hoc"/>
                             <constraint firstItem="jQz-vE-KJm" firstAttribute="leading" secondItem="weY-ko-pkB" secondAttribute="leading" constant="3" id="Ikm-CW-Erz"/>
-                            <constraint firstItem="HuI-pE-w8K" firstAttribute="leading" secondItem="snl-0h-NlR" secondAttribute="trailing" constant="8" id="eSK-jd-kno"/>
+                            <constraint firstItem="HuI-pE-w8K" firstAttribute="leading" secondItem="snl-0h-NlR" secondAttribute="trailing" constant="5" id="V5J-d6-4aJ"/>
+                            <constraint firstItem="snl-0h-NlR" firstAttribute="centerY" secondItem="hOt-ba-OoP" secondAttribute="centerY" id="Xby-CB-aw6"/>
+                            <constraint firstItem="snl-0h-NlR" firstAttribute="leading" secondItem="hOt-ba-OoP" secondAttribute="trailing" constant="2" id="aoQ-gq-T4N"/>
                             <constraint firstItem="hOt-ba-OoP" firstAttribute="leading" secondItem="jQz-vE-KJm" secondAttribute="trailing" constant="12" id="gZo-7j-fwv"/>
-                            <constraint firstAttribute="trailing" secondItem="HuI-pE-w8K" secondAttribute="trailing" id="hvB-YX-Eke"/>
                             <constraint firstItem="hOt-ba-OoP" firstAttribute="centerY" secondItem="weY-ko-pkB" secondAttribute="centerY" id="mh3-bi-PXw"/>
-                            <constraint firstItem="HuI-pE-w8K" firstAttribute="centerY" secondItem="weY-ko-pkB" secondAttribute="centerY" id="oCp-xh-4uE"/>
                             <constraint firstItem="jQz-vE-KJm" firstAttribute="centerY" secondItem="weY-ko-pkB" secondAttribute="centerY" id="qn5-sZ-tHR"/>
-                            <constraint firstItem="HuI-pE-w8K" firstAttribute="centerY" secondItem="weY-ko-pkB" secondAttribute="centerY" id="wp2-1v-PoK"/>
+                            <constraint firstItem="HuI-pE-w8K" firstAttribute="centerY" secondItem="snl-0h-NlR" secondAttribute="centerY" id="ykI-eA-3fD"/>
                         </constraints>
                     </view>
                 </subviews>

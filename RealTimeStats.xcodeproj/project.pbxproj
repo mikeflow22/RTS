@@ -41,6 +41,10 @@
 		1BDFB6E5274C93AC00609CC0 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFB6E4274C93AC00609CC0 /* CreateViewController.swift */; };
 		1BDFB6E7274C98CD00609CC0 /* CreateTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFB6E6274C98CD00609CC0 /* CreateTeamViewController.swift */; };
 		1BDFB6E9274C99BD00609CC0 /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFB6E8274C99BD00609CC0 /* CreateGameViewController.swift */; };
+		BA0241FC2759E20600B4B770 /* SubstitutionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA0241FA2759E20600B4B770 /* SubstitutionView.xib */; };
+		BA0241FD2759E20600B4B770 /* SubstitutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0241FB2759E20600B4B770 /* SubstitutionView.swift */; };
+		BA0242012759E67400B4B770 /* SubstitutionCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0241FF2759E67400B4B770 /* SubstitutionCVCell.swift */; };
+		BA0242022759E67400B4B770 /* SubstitutionCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA0242002759E67400B4B770 /* SubstitutionCVCell.xib */; };
 		BA04F47C273A399200376D8E /* SFProText-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA04F47B273A399200376D8E /* SFProText-Light.ttf */; };
 		BA04F47E273A399D00376D8E /* SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA04F47D273A399D00376D8E /* SFProText-Regular.ttf */; };
 		BA04F480273A39A700376D8E /* SFProText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA04F47F273A39A700376D8E /* SFProText-Medium.ttf */; };
@@ -56,7 +60,7 @@
 		BA499EA22742160600FEF909 /* PlayByPlayTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA499EA02742160600FEF909 /* PlayByPlayTVCell.xib */; };
 		BA499EB127422E5100FEF909 /* QuickStatsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA499EAF27422E5100FEF909 /* QuickStatsTVCell.swift */; };
 		BA499EB227422E5100FEF909 /* QuickStatsTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA499EB027422E5100FEF909 /* QuickStatsTVCell.xib */; };
-		BA9EFE40273CF0DB00F4EA29 /* UserModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9EFE3F273CF0DB00F4EA29 /* UserModal.swift */; };
+		BA9EFE40273CF0DB00F4EA29 /* SubstitutionPlayerModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9EFE3F273CF0DB00F4EA29 /* SubstitutionPlayerModal.swift */; };
 		BA9EFE42273CF1D500F4EA29 /* AttributeStringMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9EFE41273CF1D500F4EA29 /* AttributeStringMaker.swift */; };
 		BA9EFE46273CF84500F4EA29 /* PlayerTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9EFE44273CF84500F4EA29 /* PlayerTVCell.swift */; };
 		BA9EFE47273CF84500F4EA29 /* PlayerTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA9EFE45273CF84500F4EA29 /* PlayerTVCell.xib */; };
@@ -104,6 +108,10 @@
 		1BDFB6E4274C93AC00609CC0 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		1BDFB6E6274C98CD00609CC0 /* CreateTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTeamViewController.swift; sourceTree = "<group>"; };
 		1BDFB6E8274C99BD00609CC0 /* CreateGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameViewController.swift; sourceTree = "<group>"; };
+		BA0241FA2759E20600B4B770 /* SubstitutionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubstitutionView.xib; sourceTree = "<group>"; };
+		BA0241FB2759E20600B4B770 /* SubstitutionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubstitutionView.swift; sourceTree = "<group>"; };
+		BA0241FF2759E67400B4B770 /* SubstitutionCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubstitutionCVCell.swift; sourceTree = "<group>"; };
+		BA0242002759E67400B4B770 /* SubstitutionCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubstitutionCVCell.xib; sourceTree = "<group>"; };
 		BA04F47B273A399200376D8E /* SFProText-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Light.ttf"; sourceTree = "<group>"; };
 		BA04F47D273A399D00376D8E /* SFProText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Regular.ttf"; sourceTree = "<group>"; };
 		BA04F47F273A39A700376D8E /* SFProText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Medium.ttf"; sourceTree = "<group>"; };
@@ -119,7 +127,7 @@
 		BA499EA02742160600FEF909 /* PlayByPlayTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayByPlayTVCell.xib; sourceTree = "<group>"; };
 		BA499EAF27422E5100FEF909 /* QuickStatsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickStatsTVCell.swift; sourceTree = "<group>"; };
 		BA499EB027422E5100FEF909 /* QuickStatsTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickStatsTVCell.xib; sourceTree = "<group>"; };
-		BA9EFE3F273CF0DB00F4EA29 /* UserModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModal.swift; sourceTree = "<group>"; };
+		BA9EFE3F273CF0DB00F4EA29 /* SubstitutionPlayerModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubstitutionPlayerModal.swift; sourceTree = "<group>"; };
 		BA9EFE41273CF1D500F4EA29 /* AttributeStringMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeStringMaker.swift; sourceTree = "<group>"; };
 		BA9EFE44273CF84500F4EA29 /* PlayerTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTVCell.swift; sourceTree = "<group>"; };
 		BA9EFE45273CF84500F4EA29 /* PlayerTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerTVCell.xib; sourceTree = "<group>"; };
@@ -177,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				1BDFB6DD274C63CE00609CC0 /* Model Controllers */,
+				BA0241F92759E1F700B4B770 /* Views */,
 				BA60E8B9273D166200A4103D /* Controllers */,
 				BA9EFE3E273CF0CE00F4EA29 /* Models */,
 				1BDE05542752CA4D0024576A /* View Models */,
@@ -280,6 +289,25 @@
 			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
+		BA0241F92759E1F700B4B770 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BA0241FE2759E65F00B4B770 /* Cells */,
+				BA0241FB2759E20600B4B770 /* SubstitutionView.swift */,
+				BA0241FA2759E20600B4B770 /* SubstitutionView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BA0241FE2759E65F00B4B770 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BA0241FF2759E67400B4B770 /* SubstitutionCVCell.swift */,
+				BA0242002759E67400B4B770 /* SubstitutionCVCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		BA04F47A273A396300376D8E /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,7 +371,7 @@
 		BA9EFE3E273CF0CE00F4EA29 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BA9EFE3F273CF0DB00F4EA29 /* UserModal.swift */,
+				BA9EFE3F273CF0DB00F4EA29 /* SubstitutionPlayerModal.swift */,
 				1BC4CEB0272887EA00B81C17 /* Action.swift */,
 			);
 			path = Models;
@@ -503,7 +531,9 @@
 				BA499EB227422E5100FEF909 /* QuickStatsTVCell.xib in Resources */,
 				1BDFB6D6274C4D5100609CC0 /* Input.storyboard in Resources */,
 				1B415C3727248E8C0091E342 /* Main.storyboard in Resources */,
+				BA0241FC2759E20600B4B770 /* SubstitutionView.xib in Resources */,
 				BA04F482273A39B300376D8E /* SFProText-Semibold.ttf in Resources */,
+				BA0242022759E67400B4B770 /* SubstitutionCVCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BDE05532750292E0024576A /* MockTournament.swift in Sources */,
+				BA0242012759E67400B4B770 /* SubstitutionCVCell.swift in Sources */,
 				BACA90A8273E46C100E225EB /* ButtonExtensions.swift in Sources */,
 				BA425E2327494E3800E94209 /* AwayTeamViewController.swift in Sources */,
 				BA9EFE46273CF84500F4EA29 /* PlayerTVCell.swift in Sources */,
@@ -532,7 +563,7 @@
 				1B31D5D7274FC9AC0003877F /* MockTeams.swift in Sources */,
 				1BC4CEB1272887EA00B81C17 /* Action.swift in Sources */,
 				1B3A58B22726021800B2A276 /* PlayerTableViewCell.swift in Sources */,
-				BA9EFE40273CF0DB00F4EA29 /* UserModal.swift in Sources */,
+				BA9EFE40273CF0DB00F4EA29 /* SubstitutionPlayerModal.swift in Sources */,
 				1B415C4427248EB70091E342 /* Player.swift in Sources */,
 				BA425E252749540300E94209 /* HomeTeamViewController.swift in Sources */,
 				1BDFB6E3274C822300609CC0 /* SearchForTournamentViewController.swift in Sources */,
@@ -544,6 +575,7 @@
 				BACA90B0273E4CF300E225EB /* ColorExtensions.swift in Sources */,
 				1B415C46272498BC0091E342 /* PlayerViewModel.swift in Sources */,
 				1B415C3427248E8C0091E342 /* MainViewController1.swift in Sources */,
+				BA0241FD2759E20600B4B770 /* SubstitutionView.swift in Sources */,
 				BA499EA12742160600FEF909 /* PlayByPlayTVCell.swift in Sources */,
 				1B415C3027248E8C0091E342 /* AppDelegate.swift in Sources */,
 				1B415C3227248E8C0091E342 /* SceneDelegate.swift in Sources */,

@@ -21,7 +21,7 @@ class HomeTeamViewController: UIViewController, PassActionToHomeTeamDelegate, Ca
             print("player was set in homeTeamVC")
         }
     }
-
+    
     var actionPassedToHomeTeamVC: Action? {
         didSet {
             if actionPassedToHomeTeamVC != nil {
@@ -47,7 +47,7 @@ class HomeTeamViewController: UIViewController, PassActionToHomeTeamDelegate, Ca
             print("Home team was set")
         }
     }
-
+    
     let identifier = "PlayerTVCell"
     ///
     /// OUTLETS
@@ -69,11 +69,40 @@ class HomeTeamViewController: UIViewController, PassActionToHomeTeamDelegate, Ca
         }
     }
     
+    /// Substitution View Propertie
+    var substitutionView = SubstitutionView()
+    var isSubstitutionViewOpen: Bool = false
+    var replacePlayerIndex: Int = -1
+    
+    /// Selected player row highlight
+    var selectedPlayerRow: Int = -1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mainVC?.passActionToHomeTeam = self
         mainVC?.cancelActionForHomeTeam = self
         self.tc = TournamentController()
+    }
+    
+    //MARK:- IBACTIONS
+    @IBAction func ReloadButtonWasPressed(_ sender: UIButton) {
+        
+        self.isSubstitutionViewOpen = true
+        substitutionView = SubstitutionView(frame: CGRect(x: 175, y: 200, width: 670, height: 250))
+        substitutionView.teamObj = self.homeTeam
+        substitutionView.onSelection = {(_ index: Int?) in
+            if index != -1 {
+                self.replacePlayerIndex = index ?? 0
+                self.replacePlayer(index: self.selectedPlayerRow)
+            }
+            self.selectedPlayerRow = -1
+            self.isSubstitutionViewOpen = false
+        }
+        substitutionView.transform = CGAffineTransform(scaleX: 0, y: 0)
+        mainVC?.view!.addSubview(substitutionView)
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseInOut, animations: {() -> Void in
+            self.substitutionView.transform = .identity
+        }, completion: { _ in })
     }
     
 }
@@ -108,6 +137,18 @@ extension HomeTeamViewController: UITableViewDataSource {
             let player = homeTeam.players[indexPath.row]
             cell.userNameLbl.text = player.name
             cell.userIdLbl.text = "# \(player.number)"
+            
+            /// Added By Debbi
+            if self.selectedPlayerRow == indexPath.row {
+                cell.mainView.borderColor = UIColor.white
+                cell.userIdLbl.textColor = Color.topSegmentBorderColor
+                cell.userNameLbl.textColor = Color.topSegmentBorderColor
+            } else {
+                cell.mainView.borderColor = Color.userCellViewBorderGradientColor1
+                cell.userIdLbl.textColor = UIColor.white
+                cell.userNameLbl.textColor = UIColor.white
+            }
+            
         } else {
             cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! PlayerTVCell
         }
@@ -149,6 +190,12 @@ extension HomeTeamViewController: UITableViewDelegate {
             return
         }
         
+        /// Added By Debbi
+        if self.isSubstitutionViewOpen {
+            self.selectedPlayerRow = indexPath.row
+            self.tableView.reloadData()
+        }
+        
         player = homeTeam.players[indexPath.row]
         guard let unwrappedPlayer = self.player else {
             print("couldn't unwrap player in homeTeamVC")
@@ -184,6 +231,26 @@ extension HomeTeamViewController: UITableViewDelegate {
         
         //Send Play back to MainVC so it can trigger the delegatee
         unwrappedMainVC.play = play
+    }
+    
+    /// Replace active player with subsitution player
+    func replacePlayer(index: Int) {
+        
+        self.substitutionView.removeFromSuperview()
+        let activePlayer = self.homeTeam!.players[index]
+        let substitudePlayer = self.homeTeam!.players[replacePlayerIndex]
+        
+        /// Replace substition player with active player
+        self.homeTeam?.players.remove(at: index)
+        self.homeTeam?.players.insert(substitudePlayer, at: index)
+        
+        /// Replace active player with substition player
+        self.homeTeam?.players.remove(at: replacePlayerIndex)
+        self.homeTeam?.players.insert(activePlayer, at: replacePlayerIndex)
+        
+        self.replacePlayerIndex = -1
+        self.tableView.reloadData()
+        
     }
     
     /// Height For Row At indexPath

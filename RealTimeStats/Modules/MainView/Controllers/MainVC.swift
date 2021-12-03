@@ -317,7 +317,18 @@ class MainVC: UIViewController {
         self.gameTime = rules.timePerHalf
     }
     
-    
+    /*
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        var arrOfSub = self.view.subviews
+         print("Number of Subviews: \(arrOfSub.count)")
+         for item in arrOfSub {
+            print(item)
+            if item.isKind(of: SubstitutionView.self) {
+                item.removeFromSuperview()
+            }
+         }
+    }*/
     
     
     //MARK: - VIEW LOAD

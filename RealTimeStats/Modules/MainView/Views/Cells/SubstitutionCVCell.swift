@@ -1,14 +1,14 @@
 //
-//  UserTVCell.swift
+//  SubstitutionCVCell.swift
 //  RealTimeStats
 //
-//  Created by Debbi Chandel on 11/11/21.
+//  Created by Debbi Chandel on 03/12/21.
 //
 
 import UIKit
 
-class PlayerTVCell: UITableViewCell {
-    
+class SubstitutionCVCell: UICollectionViewCell {
+
     //MARK:- IBOUTLET'S
     /// Main View
     @IBOutlet weak var mainView: UIView!{
@@ -43,10 +43,5 @@ class PlayerTVCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0))
-    }
-    
+
 }

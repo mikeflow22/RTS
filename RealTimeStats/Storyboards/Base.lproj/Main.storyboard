@@ -1496,6 +1496,9 @@
                                         <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="ReloadButtonWasPressed:" destination="rky-af-4Ih" eventType="touchUpInside" id="f56-Rm-QdX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="H91-e6-aKN"/>

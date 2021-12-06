@@ -250,7 +250,7 @@ extension AwayTeamViewController: UITableViewDelegate {
     
     /// Height For Row At indexPath
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 97.0
+        return 110.0
     }
     
     /// Table Header Height

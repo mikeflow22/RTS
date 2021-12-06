@@ -84,11 +84,11 @@ class HomeTeamViewController: UIViewController, PassActionToHomeTeamDelegate, Ca
         self.tc = TournamentController()
     }
     
-    //MARK:- IBACTIONS
+    //MARK: IBACTIONS
     @IBAction func ReloadButtonWasPressed(_ sender: UIButton) {
         
         self.isSubstitutionViewOpen = true
-        substitutionView = SubstitutionView(frame: CGRect(x: 175, y: 200, width: 670, height: 250))
+        substitutionView = SubstitutionView(frame: CGRect(x: 175, y: 200, width: Screen.width - 350, height: 250))
         substitutionView.teamObj = self.homeTeam
         substitutionView.onSelection = {(_ index: Int?) in
             if index != -1 {

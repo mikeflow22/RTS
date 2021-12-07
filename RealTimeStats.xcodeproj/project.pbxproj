@@ -293,8 +293,6 @@
 			isa = PBXGroup;
 			children = (
 				BA0241FE2759E65F00B4B770 /* Cells */,
-				BA0241FB2759E20600B4B770 /* SubstitutionView.swift */,
-				BA0241FA2759E20600B4B770 /* SubstitutionView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -380,6 +378,8 @@
 		BA9EFE43273CF80900F4EA29 /* TableCell */ = {
 			isa = PBXGroup;
 			children = (
+				BA0241FB2759E20600B4B770 /* SubstitutionView.swift */,
+				BA0241FA2759E20600B4B770 /* SubstitutionView.xib */,
 				BA9EFE44273CF84500F4EA29 /* PlayerTVCell.swift */,
 				BA9EFE45273CF84500F4EA29 /* PlayerTVCell.xib */,
 				BA499E9F2742160600FEF909 /* PlayByPlayTVCell.swift */,

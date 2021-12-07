@@ -80,7 +80,7 @@ class AwayTeamViewController: UIViewController {
         self.tc = TournamentController()
     }
     
-    //MARK:  IBACTIONS
+    //MARK: - IBACTIONS
     @IBAction func ReloadButtonwasPressed(_ sender: UIButton) {
         
         self.isSubstitutionViewOpen = true
@@ -189,6 +189,7 @@ extension AwayTeamViewController: UITableViewDelegate {
         /// Added By Debbi
         if self.isSubstitutionViewOpen {
            self.selectedPlayerRow = indexPath.row
+            print("selectedPlayerRow at indexPath.row" \(indexPath.row))
            self.tableView.reloadData()
         }
         
@@ -228,7 +229,7 @@ extension AwayTeamViewController: UITableViewDelegate {
     
     /// Replace active player with subsitution player
     func replacePlayer(index: Int) {
-        
+        print("player was replaced at index: \(index)")
         self.substitutionView.removeFromSuperview()
         let activePlayer = self.awayTeam!.players[index]
         let substitudePlayer = self.awayTeam!.players[replacePlayerIndex]
@@ -243,7 +244,6 @@ extension AwayTeamViewController: UITableViewDelegate {
         
         self.replacePlayerIndex = -1
         self.tableView.reloadData()
-        
     }
     
     

@@ -37,7 +37,7 @@ class SubstitutionView: UIView {
     /// Team
     var teamObj: Team? {
         didSet {
-            print("Away team was set")
+            print("Team was set in substitution view")
         }
     }
     
@@ -135,7 +135,6 @@ extension SubstitutionView: UICollectionViewDataSource {
             cell.userIdLbl.textColor = UIColor.white
             cell.userNameLbl.textColor = UIColor.white
         }
-        
     }
 }
 

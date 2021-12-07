@@ -31,8 +31,14 @@ class CourtView: UIImageView
         maskHitView = UIImageView()
         maskHitView.image = UIImage(named: "mask")
         maskHitView.contentMode = .scaleAspectFit
-        let gr: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapResponder(_:)))
-        self.addGestureRecognizer(gr);
+        
+        let doubleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(madeTap(_:)))
+        doubleTap.numberOfTapsRequired = 2
+        
+        let oneTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(missedTap(_:)))
+        oneTap.require(toFail: doubleTap)
+        self.addGestureRecognizer(doubleTap)
+        self.addGestureRecognizer(oneTap);
     }
 
     override init(frame: CGRect) {
@@ -50,9 +56,26 @@ class CourtView: UIImageView
         super.layoutSubviews()
         maskHitView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
     }
+    
+    @objc func madeTap(_ sender: UIGestureRecognizer) {
+        // Figure out where they tapped as x,y coordinates
+        let point: CGPoint = sender.location(in: self)
+        
+        // Figure out if they tapped in a 2-point or 3-point area
+        let alpha = alphaFromPoint(point: point, view: maskHitView)
+        let points = alpha < 128 ? 3 : 2
+        
+        // Figure out the x and y coordinates as a percentage of the court width and height
+        let x = CGFloat(point.x) / self.frame.size.width
+        let y = CGFloat(point.y) / self.frame.size.height
+        
+        // Send the hit event to the delegate
+        let hit = CourtHit(x: x, y: y, points: points)
+        delegate?.hitRegistered(hit: hit)
+    }
 
     // Respond to taps by calling the delegate
-    @IBAction func tapResponder(_ sender: UIGestureRecognizer) {
+    @IBAction func missedTap(_ sender: UIGestureRecognizer) {
         // Figure out where they tapped as x,y coordinates
         let point: CGPoint = sender.location(in: self)
         

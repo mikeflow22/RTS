@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 /// Row Modal for files listing
-struct UserModal {
+struct SubstitutionPlayerModal {
     
     /// User ID
     var userId: String

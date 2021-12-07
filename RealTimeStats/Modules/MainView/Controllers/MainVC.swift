@@ -154,6 +154,9 @@ class MainVC: UIViewController {
     @IBOutlet weak var playByPlayHeaderExpandViewHeightConstraint: NSLayoutConstraint!
     /// Top Left Header Expand View Status Check
     var isExpandPlayByPlay:Bool = false
+    /// Top Container View Constraint
+    @IBOutlet weak var playByPlayTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var playByPlayLbl: UILabel!
     
     @IBOutlet weak var editBtnView: UIView! {
         didSet {
@@ -220,6 +223,12 @@ class MainVC: UIViewController {
     
     /// Secound Team View
     @IBOutlet weak var homeTeamView: UIView!
+    
+    /// Timer
+    @IBOutlet weak var gameTimerBtn: UIButton!
+    var gameTimer = Timer()
+    var gameTime = 0.0
+    var isGameTimerPaused = true
     
     //MARK: - Private Functions
     func setupScoreboard(fromTournamentController tc: TournamentController?) {
@@ -308,13 +317,28 @@ class MainVC: UIViewController {
         }
         setBreaks(breaks)
         gameTimeLabel.text = "\(mockRules.timePerHalf)"
+        self.gameTime = rules.timePerHalf
     }
+    
+    /*
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        var arrOfSub = self.view.subviews
+         print("Number of Subviews: \(arrOfSub.count)")
+         for item in arrOfSub {
+            print(item)
+            if item.isKind(of: SubstitutionView.self) {
+                item.removeFromSuperview()
+            }
+         }
+    }*/
+    
     
     //MARK: - VIEW LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
         setUPMockTournament()
-//        setupScoreboard(fromTournamentController: self.tc)
+        //        setupScoreboard(fromTournamentController: self.tc)
         
         //Top Guest/Hosts Segment Bottom
         imgTopSegmentBottomBorder = UIImageView.init(frame: CGRect.init(x: 0, y: 47, width: topSegmentView.frame.width/2, height: 3))
@@ -333,18 +357,18 @@ class MainVC: UIViewController {
         if segue.identifier == Segues.toPlayByPlayChild {
             let destVC = segue.destination as! PlayByPlayVC
             destVC.mainVC = self
-//            print(destVC.view.frame)
+            //            print(destVC.view.frame)
             
         } else if segue.identifier == Segues.toQuickStatsVC {
             let destVC = segue.destination as! QuickStatsViewController
             destVC.mainVC = self
-//            guard let game = self.game else {
-//                print("problem here: \(#function) on line: \(#line)")
-//                return
-//            }
-//            destVC.game = game
+            //            guard let game = self.game else {
+            //                print("problem here: \(#function) on line: \(#line)")
+            //                return
+            //            }
+            //            destVC.game = game
             destVC.teamFromMainVC = MockTeams.awayTeam
-//            print(destVC.view.frame)
+            //            print(destVC.view.frame)
             
         } else if segue.identifier == Segues.toAwayTeamVC {
             guard let destVC = segue.destination as? AwayTeamViewController /*, let tc = self.tc, let game = self.game */else {
@@ -353,9 +377,9 @@ class MainVC: UIViewController {
             }
             destVC.tc = tc
             destVC.mainVC = self
-//            destVC.awayTeam = game.awayTeam
+            //            destVC.awayTeam = game.awayTeam
             destVC.awayTeam = MockTeams.awayTeam
-//            print(destVC.view.frame)
+            //            print(destVC.view.frame)
             
         } else if segue.identifier == Segues.toHomeTeamVC {
             guard let destVC = segue.destination as? HomeTeamViewController /*, let tc = self.tc, let game = self.game*/ else {
@@ -363,16 +387,16 @@ class MainVC: UIViewController {
                 return
             }
             destVC.tc = tc
-//            destVC.homeTeam = game.homeTeam
+            //            destVC.homeTeam = game.homeTeam
             destVC.homeTeam = MockTeams.homeTeam
             destVC.mainVC = self
-//            print(destVC.view.frame)
+            //            print(destVC.view.frame)
         }
     }
-//    func captureShot(withLocation location: CGPoint, type: Int, stats: Stats) -> Action {
-//        let shot = Shot(location: location, stats: .missedA3pt)
-////        let action = Action(breaks: <#T##Breaks#>, time: <#T##Double#>, stat: /*shot: Shot  */)
-//    }
+    //    func captureShot(withLocation location: CGPoint, type: Int, stats: Stats) -> Action {
+    //        let shot = Shot(location: location, stats: .missedA3pt)
+    ////        let action = Action(breaks: <#T##Breaks#>, time: <#T##Double#>, stat: /*shot: Shot  */)
+    //    }
     
     func captureAction(withStat: Stats) -> Action {
         if let breaks = self.breaks, let time = gameTimeLabel.convertToDouble() {
@@ -380,7 +404,7 @@ class MainVC: UIViewController {
             let action = Action(breaks: breaks, time: time, stat: withStat)
             print("ActionCaptures: \(action)")
             return action
-//            return Action(breaks: breaks, time: time, stat: withStat)
+            //            return Action(breaks: breaks, time: time, stat: withStat)
         } else {
             return Action(breaks: .halves, time: 00.00, stat: .offFoul)
         }
@@ -390,8 +414,8 @@ class MainVC: UIViewController {
     @IBAction func offensiveFoulButtonPressed(_ sender: UIButton) {
         print("off.foul button pressed")
         //actionViewModel
-//        let shot = Shot(location: CGPoint(x: 453.0, y: 245.94), stats: .missedA3pt, success: false)
-//        let shotAction = Action(breaks: .quarters, time: 00.00, stat: shot.stats, shot: shot)
+        //        let shot = Shot(location: CGPoint(x: 453.0, y: 245.94), stats: .missedA3pt, success: false)
+        //        let shotAction = Action(breaks: .quarters, time: 00.00, stat: shot.stats, shot: shot)
         let action = captureAction(withStat: .offFoul)
         passActionToHomeTeam?.actionToPass(action)
         passActionToAwayTeam?.actionToPass(action)
@@ -496,9 +520,13 @@ class MainVC: UIViewController {
         
         if isExpandPlayByPlay == false {
             view.layoutIfNeeded()
+            self.playByPlayLbl.isHidden = false
+            self.editBtnView.isHidden = false
+            playByPlayTopConstraint.constant = 89.0
             playByPlayHeaderExpandViewHeightConstraint.constant = 350
             isExpandPlayByPlay = true
-            
+            self.PlayBtPlayListView.backgroundColor = UIColor(hexString: "#C1FBFF").withAlphaComponent(0.42)
+            //self.PlayBtPlayListView.isOpaque = true
             UIView.animate(withDuration: 0.3) {
                 self.view.layoutIfNeeded()
             } completion: { success in
@@ -508,8 +536,13 @@ class MainVC: UIViewController {
             
         } else {
             view.layoutIfNeeded()
+            self.playByPlayLbl.isHidden = true
+            self.editBtnView.isHidden = true
+            playByPlayTopConstraint.constant = 5.0
             self.playByPlayHeaderExpandViewHeightConstraint.constant = 90
             isExpandPlayByPlay = false
+            self.PlayBtPlayListView.backgroundColor = UIColor.clear
+            //self.PlayBtPlayListView.isOpaque = false
             UIView.animate(withDuration: 0.3, animations: {
                 self.view.layoutIfNeeded()
             })
@@ -551,7 +584,7 @@ class MainVC: UIViewController {
     @IBAction func quickStatsHeaderExpandBtnPressed(_ sender: UIButton) {
         
         if isExpandQuickStatsHeader == false {
-//            passTeam?.passTeam(MockTeams.awayTeam)
+            //            passTeam?.passTeam(MockTeams.awayTeam)
             view.layoutIfNeeded()
             quickStatsHeaderExpandViewHeightConstraint.constant = 350
             isExpandQuickStatsHeader = true
@@ -580,11 +613,11 @@ class MainVC: UIViewController {
         awayTeamButtonAttributes.isSelected = true
         homeTeamButtonAttributes.isSelected = false
         passTeam?.passTeam(MockTeams.awayTeam)
-//        if let awayTeam = game?.awayTeam {
-//            passAwayTeam?.passAway(awayTeam)
-//        } else {
-//            print("AwayTeam not set. Cannot pass to quickStatsVC")
-//        }
+        //        if let awayTeam = game?.awayTeam {
+        //            passAwayTeam?.passAway(awayTeam)
+        //        } else {
+        //            print("AwayTeam not set. Cannot pass to quickStatsVC")
+        //        }
         
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
             self.imgTopSegmentBottomBorder.transform = .identity
@@ -598,15 +631,54 @@ class MainVC: UIViewController {
         homeTeamButtonAttributes.isSelected = true
         awayTeamButtonAttributes.isSelected = false
         passTeam?.passTeam(MockTeams.homeTeam)
-//        passHomeTeam?.passHome(MockTeams.homeTeam)
-//        if let homeTeam = game?.homeTeam {
-//            passHomeTeam?.passHome(homeTeam)
-//        } else {
-//            print("HomeTeam not set. Cannot pass to quickStatsVC")
-//        }
+        //        passHomeTeam?.passHome(MockTeams.homeTeam)
+        //        if let homeTeam = game?.homeTeam {
+        //            passHomeTeam?.passHome(homeTeam)
+        //        } else {
+        //            print("HomeTeam not set. Cannot pass to quickStatsVC")
+        //        }
         
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
             self.imgTopSegmentBottomBorder.transform = CGAffineTransform.init(translationX: self.topSegmentView.frame.width/2, y: 0)
         }, completion: nil)
     }
+    
+    @IBAction func gameTimerBtnPressed(_ sender: Any) {
+        runGameTimer()
+    }
+    
+    //Mark:- Game Timer
+    func runGameTimer() {
+        
+        if isGameTimerPaused{
+            self.gameTimerBtn.setImage(UIImage(named: "pause"), for: .normal)
+            gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateGameTimer)), userInfo: nil, repeats: true)
+            isGameTimerPaused = false
+        } else {
+            self.gameTimerBtn.setImage(UIImage(named: "play"), for: .normal)
+            gameTimer.invalidate()
+            isGameTimerPaused = true
+        }
+    }
+    
+    /// Update Timer
+    @objc func updateGameTimer() {
+        if gameTime < 1 {
+            gameTimer.invalidate()
+        } else {
+            gameTime -= 1
+            self.gameTimeLabel.text = timeCalcution(time: TimeInterval(gameTime))
+        }
+    }
+    
+    /// Calculate the time
+    func timeCalcution(time: TimeInterval) -> String {
+        let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        //return String(format: "%02i : %02i : %02i", hours, minutes, seconds)
+        return String(format: "%02i : %02i", minutes, seconds)
+    }
+    
+    
 }

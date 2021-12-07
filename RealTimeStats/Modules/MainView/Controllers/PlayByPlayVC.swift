@@ -54,6 +54,7 @@ extension PlayByPlayVC: UITableViewDataSource {
             cell.breaksLabel.text = "\(play.action.breaks)"
             cell.timeLabel.text = "\(play.action.time)"
             cell.playerNameLabel.text = play.player.name
+            print(play.action.stat.rawValue)
             cell.statLabel.text = play.action.stat.rawValue
             
         } else {

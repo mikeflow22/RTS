@@ -30,6 +30,7 @@
 		1B85C70D274F235300D658C1 /* FindTeamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B85C70B274F235300D658C1 /* FindTeamTableViewCell.xib */; };
 		1B969C2927353F9800C456A2 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B969C2827353F9800C456A2 /* Team.swift */; };
 		1BC4CEB1272887EA00B81C17 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4CEB0272887EA00B81C17 /* Action.swift */; };
+		1BD0DEB8275F92240056AFBB /* CourtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD0DEB7275F92240056AFBB /* CourtView.swift */; };
 		1BDE05532750292E0024576A /* MockTournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDE05522750292E0024576A /* MockTournament.swift */; };
 		1BDFB6D6274C4D5100609CC0 /* Input.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BDFB6D5274C4D5100609CC0 /* Input.storyboard */; };
 		1BDFB6D8274C507B00609CC0 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFB6D7274C507B00609CC0 /* InputViewController.swift */; };
@@ -97,6 +98,7 @@
 		1B85C70B274F235300D658C1 /* FindTeamTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindTeamTableViewCell.xib; sourceTree = "<group>"; };
 		1B969C2827353F9800C456A2 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		1BC4CEB0272887EA00B81C17 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		1BD0DEB7275F92240056AFBB /* CourtView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourtView.swift; sourceTree = "<group>"; };
 		1BDE05522750292E0024576A /* MockTournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTournament.swift; sourceTree = "<group>"; };
 		1BDFB6D5274C4D5100609CC0 /* Input.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Input.storyboard; sourceTree = "<group>"; };
 		1BDFB6D7274C507B00609CC0 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 		BA0241F92759E1F700B4B770 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1BD0DEB7275F92240056AFBB /* CourtView.swift */,
 				BA0241FE2759E65F00B4B770 /* Cells */,
 			);
 			path = Views;
@@ -567,6 +570,7 @@
 				1B415C4427248EB70091E342 /* Player.swift in Sources */,
 				BA425E252749540300E94209 /* HomeTeamViewController.swift in Sources */,
 				1BDFB6E3274C822300609CC0 /* SearchForTournamentViewController.swift in Sources */,
+				1BD0DEB8275F92240056AFBB /* CourtView.swift in Sources */,
 				1B85C709274EF1EC00D658C1 /* AddPlayerViewController.swift in Sources */,
 				BACA90B6273E4FCC00E225EB /* Colors.swift in Sources */,
 				1BDFB6E5274C93AC00609CC0 /* CreateViewController.swift in Sources */,

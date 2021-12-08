@@ -31,16 +31,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ECI-Qb-UCB">
                                 <rect key="frame" x="134" y="134" width="926" height="562"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coat_Img" translatesAutoresizingMaskIntoConstraints="NO" id="V9T-vd-dGt">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kg-ew-ZAW" customClass="CourtView" customModule="RealTimeStats" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="926" height="562"/>
-                                    </imageView>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25882352939999997" green="0.34901960780000002" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="V9T-vd-dGt" firstAttribute="leading" secondItem="ECI-Qb-UCB" secondAttribute="leading" id="IMV-1I-EPO"/>
-                                    <constraint firstItem="V9T-vd-dGt" firstAttribute="top" secondItem="ECI-Qb-UCB" secondAttribute="top" id="L5E-Iw-IVZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="V9T-vd-dGt" secondAttribute="trailing" id="cKu-tf-AM4"/>
-                                    <constraint firstAttribute="bottom" secondItem="V9T-vd-dGt" secondAttribute="bottom" id="pAE-Cl-RYB"/>
+                                    <constraint firstAttribute="trailing" secondItem="5kg-ew-ZAW" secondAttribute="trailing" id="RXU-w6-nyE"/>
+                                    <constraint firstAttribute="bottom" secondItem="5kg-ew-ZAW" secondAttribute="bottom" id="bLU-0J-Yfz"/>
+                                    <constraint firstItem="5kg-ew-ZAW" firstAttribute="leading" secondItem="ECI-Qb-UCB" secondAttribute="leading" id="cRC-SF-2Dq"/>
+                                    <constraint firstItem="5kg-ew-ZAW" firstAttribute="top" secondItem="ECI-Qb-UCB" secondAttribute="top" id="rMK-2n-CXu"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Kb-rW-06l" userLabel="away team containerView">
@@ -1526,7 +1527,6 @@
     </scenes>
     <resources>
         <image name="Ball" width="20" height="20"/>
-        <image name="Coat_Img" width="665" height="375"/>
         <image name="Edit" width="15.5" height="15.5"/>
         <image name="Left_Arrow" width="11" height="11"/>
         <image name="Reload" width="17" height="14"/>

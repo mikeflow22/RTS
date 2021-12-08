@@ -399,6 +399,7 @@ class MainVC: UIViewController {
     //    }
     
     func captureAction(withStat: Stats) -> Action {
+        gameTimeLabel.text = "\(gameTime)"
         if let breaks = self.breaks, let time = gameTimeLabel.convertToDouble() {
             ///ActionViewModel/Controller
             let action = Action(breaks: breaks, time: time, stat: withStat)
@@ -647,7 +648,7 @@ class MainVC: UIViewController {
         runGameTimer()
     }
     
-    //Mark:- Game Timer
+    //MARK: - Game Timer
     func runGameTimer() {
         
         if isGameTimerPaused{

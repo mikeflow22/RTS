@@ -11,6 +11,14 @@ struct CourtHit {
     var x: CGFloat
     var y: CGFloat
     var points: Int
+    var success: Bool
+}
+
+struct Shot {
+    let location: CGPoint //store percentage of location based on screen size/rotation
+    let stats: Stats
+    let success: Bool
+//    let type: ShotType
 }
 
 protocol CourtDelegate: AnyObject {
@@ -57,10 +65,7 @@ class CourtView: UIImageView
         maskHitView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
     }
     
-    @objc func madeTap(_ sender: UIGestureRecognizer) {
-        // Figure out where they tapped as x,y coordinates
-        let point: CGPoint = sender.location(in: self)
-        
+    func whereDidTheyTap(_ point: CGPoint, success: Bool){
         // Figure out if they tapped in a 2-point or 3-point area
         let alpha = alphaFromPoint(point: point, view: maskHitView)
         let points = alpha < 128 ? 3 : 2
@@ -70,26 +75,17 @@ class CourtView: UIImageView
         let y = CGFloat(point.y) / self.frame.size.height
         
         // Send the hit event to the delegate
-        let hit = CourtHit(x: x, y: y, points: points)
+        let hit = CourtHit(x: x, y: y, points: points, success: success)
         delegate?.hitRegistered(hit: hit)
+    }
+    
+    @objc func madeTap(_ sender: UIGestureRecognizer) {
+        whereDidTheyTap(sender.location(in: self), success: true)
     }
 
     // Respond to taps by calling the delegate
     @IBAction func missedTap(_ sender: UIGestureRecognizer) {
-        // Figure out where they tapped as x,y coordinates
-        let point: CGPoint = sender.location(in: self)
-        
-        // Figure out if they tapped in a 2-point or 3-point area
-        let alpha = alphaFromPoint(point: point, view: maskHitView)
-        let points = alpha < 128 ? 3 : 2
-        
-        // Figure out the x and y coordinates as a percentage of the court width and height
-        let x = CGFloat(point.x) / self.frame.size.width
-        let y = CGFloat(point.y) / self.frame.size.height
-        
-        // Send the hit event to the delegate
-        let hit = CourtHit(x: x, y: y, points: points)
-        delegate?.hitRegistered(hit: hit)
+        whereDidTheyTap(sender.location(in: self), success: false)
     }
 
     

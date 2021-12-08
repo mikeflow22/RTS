@@ -37,12 +37,12 @@ enum Stats: String {
 //    case shot = "Shot"
 //    case points = "Points"
 }
-struct Shot {
-    let location: CGPoint //store percentage of location based on screen size/rotation
-    let stats: Stats
-    let success: Bool
-//    let type: ShotType
-}
+//struct Shot {
+//    let location: CGPoint //store percentage of location based on screen size/rotation
+//    let stats: Stats
+//    let success: Bool
+////    let type: ShotType
+//}
 enum ShotType: Int {
     case twoPoints = 2
     case threePoints = 3

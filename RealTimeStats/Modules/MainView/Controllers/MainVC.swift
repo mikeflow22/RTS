@@ -137,6 +137,7 @@ class MainVC: UIViewController {
     @IBAction func homeTeamPossessionArrowBtnPressed(_ sender: UIButton) {
     }
     
+    @IBOutlet weak var courtView: CourtView!
     
     @IBOutlet weak var gameTimeLabel: UILabel!
     @IBOutlet weak var HalvesOrQuartersSegmentedControlAttributes: UISegmentedControl!
@@ -287,7 +288,6 @@ class MainVC: UIViewController {
         }
     }
     
-    
     func setUPMockTournament() {
         mockTournament = Tournament(name: "Fake")
         let mockRules = Rule(halves: 2, timePerHalf: 15.00, foulLimit: 5, bonusLimit: 6, doubleBonusLimit: 10, timeouts: 5)
@@ -333,10 +333,10 @@ class MainVC: UIViewController {
          }
     }*/
     
-    
     //MARK: - VIEW LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
+        courtView.delegate = self
         setUPMockTournament()
         //        setupScoreboard(fromTournamentController: self.tc)
         
@@ -681,5 +681,58 @@ class MainVC: UIViewController {
         return String(format: "%02i : %02i", minutes, seconds)
     }
     
+    //MARK: - CourtDelegate Properties
+    let BALL_SIZE: CGFloat = 28
+    let MAX_BALLS: Int = 5
+    var balls: [UIView] = []
+}
+
+extension MainVC: CourtDelegate {
+    func addBall(withColor: UIColor, text: String, textColor: UIColor, x: CGFloat, y: CGFloat) {
+        // Construct the subview for the ball
+        let ball = UIView()
+        ball.translatesAutoresizingMaskIntoConstraints = false
+            // Turns off auto resizing so we can specify the size and position with constraints
+        ball.backgroundColor = withColor
+        ball.layer.cornerRadius = BALL_SIZE / 2.0       // makes it round
+        ball.clipsToBounds = true                       // makes it round
+        
+        // Add a label to the ball
+        let ballLabel = UILabel(frame: CGRect(x: 2, y: 2, width: BALL_SIZE-4, height: BALL_SIZE-4))
+        ballLabel.textColor = textColor
+        ballLabel.textAlignment = .center
+        ballLabel.font = UIFont.systemFont(ofSize: BALL_SIZE-8)
+        ball.addSubview(ballLabel)
+        ballLabel.text = text
+        
+        // Set the height and width of the view
+        ball.addConstraint(NSLayoutConstraint(item: ball, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: BALL_SIZE))
+        ball.addConstraint(NSLayoutConstraint(item: ball, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: BALL_SIZE))
+        
+        // Add the subview to the court view
+        self.courtView.addSubview(ball)
+        
+        // Add the x and y offsets as constraints using multipliers
+        let xMultiplier: CGFloat = x
+        let yMultiplier: CGFloat = y
+        courtView.addConstraint(NSLayoutConstraint(item: ball, attribute: .trailing, relatedBy: .equal, toItem: courtView, attribute: .trailing, multiplier: xMultiplier, constant: BALL_SIZE/2))
+        courtView.addConstraint(NSLayoutConstraint(item: ball, attribute: .bottom, relatedBy: .equal, toItem: courtView, attribute: .bottom, multiplier: yMultiplier, constant: BALL_SIZE/2))
+
+        // Add the new ball to the list
+        balls.append(ball)
+    }
+    
+    // This is called whenever there is a tap in the court area. The x and y coordinates are given as a percentage of the
+    // CourtView's width and height, not as absolute values. This function shows how to place a subview in the court area
+    // using those values.
+    func hitRegistered(hit: CourtHit) {
+        if hit.success {
+            print("double tap was recorded. shot was worth: \(hit.points)pts")
+            addBall(withColor: .green, text: "\(hit.points)", textColor: .black, x: hit.x, y: hit.y)
+        } else {
+            print("single tap was recorded. shot was worth: \(hit.points)pts")
+            addBall(withColor: .red, text: "X", textColor: .white, x: hit.x, y: hit.y)
+        }
+    }
     
 }

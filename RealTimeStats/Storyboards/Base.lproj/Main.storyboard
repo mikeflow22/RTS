@@ -1169,6 +1169,7 @@
                         <outlet property="awayTeamScoreLabel" destination="wVK-Ct-jnG" id="hi8-yp-YBh"/>
                         <outlet property="awayTeamView" destination="1Kb-rW-06l" id="4gA-aL-XiC"/>
                         <outlet property="bottomView" destination="gCo-b4-7Dm" id="5Nc-rg-dZz"/>
+                        <outlet property="courtView" destination="5kg-ew-ZAW" id="9Se-oi-uXC"/>
                         <outlet property="editBtnView" destination="a4h-ca-eel" id="jHy-yq-PKL"/>
                         <outlet property="gameTimeLabel" destination="iCn-jG-BwC" id="MEJ-7S-u0K"/>
                         <outlet property="gameTimerBtn" destination="b1i-u2-ffm" id="BsA-XA-YJr"/>

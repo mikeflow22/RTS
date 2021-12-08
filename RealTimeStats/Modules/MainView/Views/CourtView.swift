@@ -7,6 +7,7 @@
 
 import UIKit
 
+//CourtHit is the new Shot
 struct CourtHit {
     var x: CGFloat
     var y: CGFloat

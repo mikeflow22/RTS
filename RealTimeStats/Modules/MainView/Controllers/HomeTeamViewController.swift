@@ -225,6 +225,7 @@ extension HomeTeamViewController: UITableViewDelegate {
         
         // add play to player's array
         unwrappedPlayer.plays.append(play)
+        //add shot to player's shot array
         if let shot = play.action.shot {
             unwrappedPlayer.shots.append(shot)
         }

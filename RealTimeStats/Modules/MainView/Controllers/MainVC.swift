@@ -726,13 +726,34 @@ extension MainVC: CourtDelegate {
     // CourtView's width and height, not as absolute values. This function shows how to place a subview in the court area
     // using those values.
     func hitRegistered(hit: CourtHit) {
-        if hit.success {
+        //courtHit is a shot
+        //add shot to player array - this is done in the Teams' View Controller
+        //we add the shot to the action to send to the teamVCs
+        let stats: Stats!
+        if hit.points == 3 && hit.success {
+            stats = .madeA3pt
             print("double tap was recorded. shot was worth: \(hit.points)pts")
             addBall(withColor: .green, text: "\(hit.points)", textColor: .black, x: hit.x, y: hit.y)
-        } else {
+        } else if hit.points == 3 && hit.success == false {
+            stats = .missedA3pt
+            print("single tap was recorded. shot was worth: \(hit.points)pts")
+            addBall(withColor: .red, text: "X", textColor: .white, x: hit.x, y: hit.y)
+        } else if hit.points == 2 && hit.success {
+            stats = .madeA2pt
+            print("double tap was recorded. shot was worth: \(hit.points)pts")
+            addBall(withColor: .green, text: "\(hit.points)", textColor: .black, x: hit.x, y: hit.y)
+        } else if hit.points == 2 && hit.success == false {
+            stats = .missedA2pt
             print("single tap was recorded. shot was worth: \(hit.points)pts")
             addBall(withColor: .red, text: "X", textColor: .white, x: hit.x, y: hit.y)
         }
+//        if hit.success {
+//            print("double tap was recorded. shot was worth: \(hit.points)pts")
+//            addBall(withColor: .green, text: "\(hit.points)", textColor: .black, x: hit.x, y: hit.y)
+//        } else {
+//            print("single tap was recorded. shot was worth: \(hit.points)pts")
+//            addBall(withColor: .red, text: "X", textColor: .white, x: hit.x, y: hit.y)
+//        }
     }
     
 }

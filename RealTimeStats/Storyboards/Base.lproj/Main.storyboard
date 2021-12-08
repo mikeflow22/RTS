@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gtu-Ut-Ztq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gtu-Ut-Ztq">
     <device id="ipad11_0rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,10 +29,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ECI-Qb-UCB">
-                                <rect key="frame" x="134" y="110" width="926" height="586"/>
+                                <rect key="frame" x="134" y="134" width="926" height="562"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coat_Img" translatesAutoresizingMaskIntoConstraints="NO" id="V9T-vd-dGt">
-                                        <rect key="frame" x="0.0" y="0.0" width="926" height="586"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="926" height="562"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25882352939999997" green="0.34901960780000002" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -44,10 +44,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Kb-rW-06l" userLabel="away team containerView">
-                                <rect key="frame" x="0.0" y="110" width="134" height="655"/>
+                                <rect key="frame" x="0.0" y="134" width="134" height="631"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6PV-g5-mvg">
-                                        <rect key="frame" x="0.0" y="0.0" width="134" height="655"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="134" height="631"/>
                                         <connections>
                                             <segue destination="zl5-gc-zxd" kind="embed" identifier="toAwayTeamVC" id="ogl-Tf-tvS"/>
                                         </connections>
@@ -65,7 +65,7 @@
                                 <rect key="frame" x="0.0" y="765" width="134" height="69"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Real-Time Stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z79-OV-UIL">
-                                        <rect key="frame" x="4" y="24.5" width="126.5" height="20.5"/>
+                                        <rect key="frame" x="6" y="24.5" width="122" height="20"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -83,7 +83,7 @@
                                 <rect key="frame" x="1060" y="765" width="134" height="69"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Real-Time Stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTh-t2-xQc">
-                                        <rect key="frame" x="4" y="24.5" width="126.5" height="20.5"/>
+                                        <rect key="frame" x="6" y="24.5" width="122" height="20"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -183,7 +183,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FREE THROWS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PS6-CX-obX">
-                                                        <rect key="frame" x="14" y="52" width="255.5" height="14.5"/>
+                                                        <rect key="frame" x="14" y="52" width="255.5" height="14"/>
                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -432,10 +432,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="alk-zq-kD3">
-                                <rect key="frame" x="1060" y="110" width="134" height="655"/>
+                                <rect key="frame" x="1060" y="134" width="134" height="631"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9cz-g4-Nsy">
-                                        <rect key="frame" x="0.0" y="0.0" width="134" height="655"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="134" height="631"/>
                                         <connections>
                                             <segue destination="rky-af-4Ih" kind="embed" identifier="toHomeTeamVC" id="7gy-Ef-xmD"/>
                                         </connections>
@@ -450,7 +450,7 @@
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8Q-pz-3Wc">
-                                <rect key="frame" x="397" y="90" width="400" height="21"/>
+                                <rect key="frame" x="397" y="114" width="400" height="21"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCT-om-TZH">
                                         <rect key="frame" x="170" y="10" width="60" height="1.5"/>
@@ -482,10 +482,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ6-Dq-9O0">
-                                <rect key="frame" x="0.0" y="0.0" width="397" height="90"/>
+                                <rect key="frame" x="0.0" y="24" width="397" height="90"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play By Play" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3L-Nd-E7z">
-                                        <rect key="frame" x="20" y="35" width="97" height="20.5"/>
+                                        <rect key="frame" x="20" y="35" width="94.5" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20.5" id="SKn-7e-iVe"/>
                                         </constraints>
@@ -561,7 +561,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Zw-HB-PW3">
-                                <rect key="frame" x="397" y="0.0" width="400" height="90"/>
+                                <rect key="frame" x="397" y="24" width="400" height="90"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="082" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVK-Ct-jnG">
                                         <rect key="frame" x="15" y="10" width="81" height="30"/>
@@ -684,13 +684,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BC Spartak" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sg8-8S-Ker">
-                                        <rect key="frame" x="15" y="52" width="90.5" height="20.5"/>
+                                        <rect key="frame" x="15" y="52" width="88" height="20"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BC Enisey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jks-EH-5t8">
-                                        <rect key="frame" x="304.5" y="52" width="80.5" height="20.5"/>
+                                        <rect key="frame" x="306.5" y="52" width="78.5" height="20"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -722,7 +722,7 @@
                                                         <rect key="frame" x="79" y="-14" width="71" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T.O.L" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KU-1o-Afl">
-                                                                <rect key="frame" x="5" y="4" width="33.5" height="22"/>
+                                                                <rect key="frame" x="5" y="4" width="33" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="bA0-hx-B7l"/>
                                                                 </constraints>
@@ -731,7 +731,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbq-yo-Lfa">
-                                                                <rect key="frame" x="45.5" y="5" width="10.5" height="20"/>
+                                                                <rect key="frame" x="46.5" y="5" width="9.5" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="Nec-Bo-gp6"/>
                                                                 </constraints>
@@ -758,7 +758,7 @@
                                                         <rect key="frame" x="0.0" y="-14" width="71" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fouls" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bN-4w-Y2T">
-                                                                <rect key="frame" x="5" y="4" width="35.5" height="22"/>
+                                                                <rect key="frame" x="5" y="4" width="34" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="Xi9-zU-eO5"/>
                                                                 </constraints>
@@ -767,7 +767,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdU-Lf-wr3">
-                                                                <rect key="frame" x="45" y="5" width="8" height="20"/>
+                                                                <rect key="frame" x="43.5" y="5" width="9.5" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="YVj-AP-ngR"/>
                                                                 </constraints>
@@ -809,7 +809,7 @@
                                                         <rect key="frame" x="0.0" y="-14" width="71" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T.O.L" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oY-ZT-SKc">
-                                                                <rect key="frame" x="5" y="4" width="33.5" height="22"/>
+                                                                <rect key="frame" x="5" y="4" width="33" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="KGU-8z-iKZ"/>
                                                                 </constraints>
@@ -818,7 +818,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAR-Vp-gmc">
-                                                                <rect key="frame" x="45" y="5" width="11" height="20"/>
+                                                                <rect key="frame" x="46.5" y="5" width="9.5" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="2ab-N1-227"/>
                                                                 </constraints>
@@ -845,7 +845,7 @@
                                                         <rect key="frame" x="79" y="-14" width="71" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fouls" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1m-0Q-Zu1">
-                                                                <rect key="frame" x="5" y="4" width="35.5" height="22"/>
+                                                                <rect key="frame" x="5" y="4" width="34" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="lwe-Lh-kgK"/>
                                                                 </constraints>
@@ -854,7 +854,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbn-en-t1j">
-                                                                <rect key="frame" x="48" y="5" width="8" height="20"/>
+                                                                <rect key="frame" x="46.5" y="5" width="9.5" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="x0D-N0-NFY"/>
                                                                 </constraints>
@@ -927,7 +927,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKV-4k-fRw">
-                                <rect key="frame" x="797" y="0.0" width="397" height="90"/>
+                                <rect key="frame" x="797" y="24" width="397" height="90"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Eo-DE-I8e">
                                         <rect key="frame" x="10" y="0.0" width="377" height="50"/>
@@ -976,7 +976,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdw-AU-keG">
-                                        <rect key="frame" x="10" y="60" width="49.5" height="20.5"/>
+                                        <rect key="frame" x="10" y="60" width="47.5" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20.5" id="4Rk-hd-zUr"/>
                                         </constraints>
@@ -985,25 +985,25 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNz-RS-njh">
-                                        <rect key="frame" x="125" y="60" width="32.5" height="20.5"/>
+                                        <rect key="frame" x="124.5" y="60" width="32" height="20"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmM-sF-LWR">
-                                        <rect key="frame" x="182.5" y="60" width="32.5" height="20.5"/>
+                                        <rect key="frame" x="181.5" y="60" width="34" height="20"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9p-28-S33">
-                                        <rect key="frame" x="240" y="60" width="33.5" height="20.5"/>
+                                        <rect key="frame" x="240.5" y="60" width="32" height="20"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fouls" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNe-oH-jLE">
-                                        <rect key="frame" x="344" y="60" width="43" height="20.5"/>
+                                        <rect key="frame" x="345.5" y="60" width="41.5" height="20"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1050,7 +1050,7 @@
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDi-05-Qfi">
-                                <rect key="frame" x="797" y="90" width="397" height="21"/>
+                                <rect key="frame" x="797" y="114" width="397" height="21"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaU-dz-8tf">
                                         <rect key="frame" x="168.5" y="10" width="60" height="1.5"/>
@@ -1082,7 +1082,7 @@
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="clN-hS-ugL">
-                                <rect key="frame" x="0.0" y="90" width="397" height="21"/>
+                                <rect key="frame" x="0.0" y="114" width="397" height="21"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tm6-9D-T6x">
                                         <rect key="frame" x="168.5" y="10" width="60" height="1.5"/>
@@ -1208,7 +1208,7 @@
                                 <color key="separatorColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeTeamPlayerCell" id="cUY-wG-oqw">
-                                        <rect key="frame" x="0.0" y="24.5" width="1154" height="75"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="1154" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cUY-wG-oqw" id="frR-Xm-Ao1">
                                             <rect key="frame" x="0.0" y="0.0" width="1154" height="75"/>
@@ -1248,7 +1248,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="playCell" id="9wV-jW-JSo" customClass="PlayByPlayTableViewCell" customModule="RealTimeStats" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="1194" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="1194" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9wV-jW-JSo" id="v34-8q-gaV">
                                             <rect key="frame" x="0.0" y="0.0" width="1194" height="43.5"/>
@@ -1306,7 +1306,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="nYC-0L-zKh" customClass="PlayByPlayTVCell" customModule="RealTimeStats" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="352" height="44"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="352" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nYC-0L-zKh" id="8fH-rk-kfi">
                                             <rect key="frame" x="0.0" y="0.0" width="352" height="44"/>
@@ -1351,7 +1351,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="UX8-f1-h6c" customClass="QuickStatsTVCell" customModule="RealTimeStats" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="352" height="44"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="352" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UX8-f1-h6c" id="GJC-1R-gYa">
                                             <rect key="frame" x="0.0" y="0.0" width="352" height="44"/>
@@ -1388,15 +1388,15 @@
             <objects>
                 <viewController storyboardIdentifier="LeftPlayersVC" id="zl5-gc-zxd" customClass="AwayTeamViewController" customModule="RealTimeStats" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fyD-fB-LCL">
-                        <rect key="frame" x="0.0" y="0.0" width="134" height="655"/>
+                        <rect key="frame" x="0.0" y="0.0" width="134" height="631"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NW3-bh-Yeb">
-                                <rect key="frame" x="10" y="80" width="114" height="575"/>
+                                <rect key="frame" x="10" y="80" width="114" height="551"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="oiG-XJ-jG8" customClass="PlayerTVCell" customModule="RealTimeStats" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="114" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="114" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oiG-XJ-jG8" id="1GF-YE-9Ql">
                                             <rect key="frame" x="0.0" y="0.0" width="114" height="43.5"/>
@@ -1458,15 +1458,15 @@
             <objects>
                 <viewController storyboardIdentifier="RightPlayersVC" id="rky-af-4Ih" customClass="HomeTeamViewController" customModule="RealTimeStats" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eRb-AN-s1B">
-                        <rect key="frame" x="0.0" y="0.0" width="134" height="655"/>
+                        <rect key="frame" x="0.0" y="0.0" width="134" height="631"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="djr-jI-ebt">
-                                <rect key="frame" x="10" y="80" width="114" height="575"/>
+                                <rect key="frame" x="10" y="80" width="114" height="551"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="X3d-r7-dNb" customClass="PlayerTVCell" customModule="RealTimeStats" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="114" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="114" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X3d-r7-dNb" id="uyj-kT-NUz">
                                             <rect key="frame" x="0.0" y="0.0" width="114" height="43.5"/>

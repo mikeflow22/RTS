@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1B2B82DD27300B9F00AD3511 /* PlayByPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2B82DC27300B9F00AD3511 /* PlayByPlayViewController.swift */; };
 		1B31D5D7274FC9AC0003877F /* MockTeams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B31D5D6274FC9AC0003877F /* MockTeams.swift */; };
+		1B39385827622CF800603B1B /* TournamentNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B39385727622CF800603B1B /* TournamentNetworking.swift */; };
 		1B3A58AC2725FF1500B2A276 /* HomeTeamPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A58AB2725FF1500B2A276 /* HomeTeamPlayerVC.swift */; };
 		1B3A58B22726021800B2A276 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A58B02726021800B2A276 /* PlayerTableViewCell.swift */; };
 		1B3A58B32726021800B2A276 /* PlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B3A58B12726021800B2A276 /* PlayerTableViewCell.xib */; };
@@ -75,6 +76,7 @@
 /* Begin PBXFileReference section */
 		1B2B82DC27300B9F00AD3511 /* PlayByPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayByPlayViewController.swift; sourceTree = "<group>"; };
 		1B31D5D6274FC9AC0003877F /* MockTeams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTeams.swift; sourceTree = "<group>"; };
+		1B39385727622CF800603B1B /* TournamentNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentNetworking.swift; sourceTree = "<group>"; };
 		1B3A58AB2725FF1500B2A276 /* HomeTeamPlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTeamPlayerVC.swift; sourceTree = "<group>"; };
 		1B3A58B02726021800B2A276 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		1B3A58B12726021800B2A276 /* PlayerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerTableViewCell.xib; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				1BDFB6DE274C63DF00609CC0 /* TournamentController.swift */,
+				1B39385727622CF800603B1B /* TournamentNetworking.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 			files = (
 				1BDE05532750292E0024576A /* MockTournament.swift in Sources */,
 				BA0242012759E67400B4B770 /* SubstitutionCVCell.swift in Sources */,
+				1B39385827622CF800603B1B /* TournamentNetworking.swift in Sources */,
 				BACA90A8273E46C100E225EB /* ButtonExtensions.swift in Sources */,
 				BA425E2327494E3800E94209 /* AwayTeamViewController.swift in Sources */,
 				BA9EFE46273CF84500F4EA29 /* PlayerTVCell.swift in Sources */,

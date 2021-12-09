@@ -295,6 +295,8 @@
 			isa = PBXGroup;
 			children = (
 				1BD0DEB7275F92240056AFBB /* CourtView.swift */,
+				BA0241FB2759E20600B4B770 /* SubstitutionView.swift */,
+				BA0241FA2759E20600B4B770 /* SubstitutionView.xib */,
 				BA0241FE2759E65F00B4B770 /* Cells */,
 			);
 			path = Views;
@@ -303,8 +305,6 @@
 		BA0241FE2759E65F00B4B770 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				BA0241FF2759E67400B4B770 /* SubstitutionCVCell.swift */,
-				BA0242002759E67400B4B770 /* SubstitutionCVCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -381,8 +381,8 @@
 		BA9EFE43273CF80900F4EA29 /* TableCell */ = {
 			isa = PBXGroup;
 			children = (
-				BA0241FB2759E20600B4B770 /* SubstitutionView.swift */,
-				BA0241FA2759E20600B4B770 /* SubstitutionView.xib */,
+				BA0241FF2759E67400B4B770 /* SubstitutionCVCell.swift */,
+				BA0242002759E67400B4B770 /* SubstitutionCVCell.xib */,
 				BA9EFE44273CF84500F4EA29 /* PlayerTVCell.swift */,
 				BA9EFE45273CF84500F4EA29 /* PlayerTVCell.xib */,
 				BA499E9F2742160600FEF909 /* PlayByPlayTVCell.swift */,

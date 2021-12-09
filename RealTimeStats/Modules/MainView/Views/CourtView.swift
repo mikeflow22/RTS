@@ -8,22 +8,16 @@
 import UIKit
 
 //CourtHit is the new Shot
-struct CourtHit {
+struct Shot {
     var x: CGFloat
     var y: CGFloat
     var points: Int
     var success: Bool
-}
-
-struct Shot {
-    let location: CGPoint //store percentage of location based on screen size/rotation
-    let stats: Stats
-    let success: Bool
-//    let type: ShotType
+    var stats: Stats
 }
 
 protocol CourtDelegate: AnyObject {
-    func hitRegistered(hit: CourtHit)
+    func hitRegistered(hit: Shot)
 }
 
 class CourtView: UIImageView
@@ -65,19 +59,37 @@ class CourtView: UIImageView
         super.layoutSubviews()
         maskHitView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
     }
-    
+    func figureOutStats(points: Int, success: Bool) -> Stats {
+        var stats: Stats!
+        
+        if points == 3 && success {
+            stats = .madeA3pt
+            print("double tap was recorded. shot was worth: \(points)pts")
+        } else if points == 3 && success == false {
+            stats = .missedA3pt
+            print("single tap was recorded. shot was worth: \(points)pts")
+        } else if points == 2 && success {
+            stats = .madeA2pt
+            print("double tap was recorded. shot was worth: \(points)pts")
+        } else if points == 2 && success == false {
+            stats = .missedA2pt
+            print("single tap was recorded. shot was worth: \(points)pts")
+        }
+        return stats
+    }
     func whereDidTheyTap(_ point: CGPoint, success: Bool){
         // Figure out if they tapped in a 2-point or 3-point area
         let alpha = alphaFromPoint(point: point, view: maskHitView)
         let points = alpha < 128 ? 3 : 2
+        let stats = figureOutStats(points: points, success: success)
         
         // Figure out the x and y coordinates as a percentage of the court width and height
         let x = CGFloat(point.x) / self.frame.size.width
         let y = CGFloat(point.y) / self.frame.size.height
         
         // Send the hit event to the delegate
-        let hit = CourtHit(x: x, y: y, points: points, success: success)
-        delegate?.hitRegistered(hit: hit)
+        let shot = Shot(x: x, y: y, points: points, success: success, stats: stats)
+        delegate?.hitRegistered(hit: shot)
     }
     
     @objc func madeTap(_ sender: UIGestureRecognizer) {

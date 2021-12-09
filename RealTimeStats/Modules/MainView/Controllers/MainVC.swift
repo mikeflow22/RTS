@@ -228,7 +228,7 @@ class MainVC: UIViewController {
     /// Timer
     @IBOutlet weak var gameTimerBtn: UIButton!
     var gameTimer = Timer()
-    var gameTime = 0.0
+    var gameTime = 90.0
     var isGameTimerPaused = true
     
     //MARK: - Private Functions
@@ -290,7 +290,7 @@ class MainVC: UIViewController {
     
     func setUPMockTournament() {
         mockTournament = Tournament(name: "Fake")
-        let mockRules = Rule(halves: 2, timePerHalf: 15.00, foulLimit: 5, bonusLimit: 6, doubleBonusLimit: 10, timeouts: 5)
+        let mockRules = Rule(halves: 2, timePerHalf: 60.00, foulLimit: 5, bonusLimit: 6, doubleBonusLimit: 10, timeouts: 5)
         mockTournament?.rule = mockRules
         let awayTeam = MockTeams.awayTeam
         let homeTeam = MockTeams.homeTeam
@@ -319,19 +319,6 @@ class MainVC: UIViewController {
         gameTimeLabel.text = "\(mockRules.timePerHalf)"
         self.gameTime = rules.timePerHalf
     }
-    
-    /*
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        var arrOfSub = self.view.subviews
-         print("Number of Subviews: \(arrOfSub.count)")
-         for item in arrOfSub {
-            print(item)
-            if item.isKind(of: SubstitutionView.self) {
-                item.removeFromSuperview()
-            }
-         }
-    }*/
     
     //MARK: - VIEW LOAD
     override func viewDidLoad() {
@@ -722,18 +709,17 @@ extension MainVC: CourtDelegate {
         balls.append(ball)
     }
     
+    func sendShotAction(hit: Shot) {
+        let action = captureAction(withStat: hit.stats)
+        action.shot = hit
+        passActionToAwayTeam?.actionToPass(action)
+        passActionToHomeTeam?.actionToPass(action)
+    }
+    
     // This is called whenever there is a tap in the court area. The x and y coordinates are given as a percentage of the
     // CourtView's width and height, not as absolute values. This function shows how to place a subview in the court area
     // using those values.
     func hitRegistered(hit: Shot) {
-        //        let shot = Shot(location: CGPoint(x: 453.0, y: 245.94), stats: .missedA3pt, success: false)
-        //        let shotAction = Action(breaks: .quarters, time: 00.00, stat: shot.stats, shot: shot)
-//        let action = captureAction(withStat: .offFoul)
-//        passActionToHomeTeam?.actionToPass(action)
-//        passActionToAwayTeam?.actionToPass(action)
-        //courtHit is a shot
-        //add shot to player array - this is done in the Teams' View Controller
-        //we add the shot to the action to send to the teamVCs
         if hit.stats == .madeA2pt {
             addBall(withColor: .green, text: "\(hit.points)", textColor: .black, x: hit.x, y: hit.y)
             sendShotAction(hit: hit)
@@ -748,12 +734,4 @@ extension MainVC: CourtDelegate {
             sendShotAction(hit: hit)
         }
     }
-    
-    func sendShotAction(hit: Shot) {
-        let action = captureAction(withStat: hit.stats)
-        action.shot = hit
-        passActionToAwayTeam?.actionToPass(action)
-        passActionToHomeTeam?.actionToPass(action)
-    }
-    
 }

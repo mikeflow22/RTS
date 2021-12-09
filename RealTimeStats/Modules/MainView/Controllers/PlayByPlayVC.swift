@@ -51,7 +51,7 @@ extension PlayByPlayVC: UITableViewDataSource {
         
         if PlayByPlayViewModel.plays.count > 0 {
             let play = PlayByPlayViewModel.plays[indexPath.row]
-            cell.breaksLabel.text = "\(play.action.breaks)"
+            cell.breaksLabel.text = "\(play.action.breaks.rawValue)"
             cell.timeLabel.text = "\(play.action.time)"
             cell.playerNameLabel.text = play.player.name
 //            print("The action passed in to pbp \(play.action.stat.rawValue)")

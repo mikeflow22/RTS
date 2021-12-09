@@ -230,6 +230,10 @@ extension AwayTeamViewController: UITableViewDelegate {
     /// Replace active player with subsitution player
     func replacePlayer(index: Int) {
         print("player was replaced at index: \(index)")
+        guard index >= 0 else {
+            return
+        }
+
         self.substitutionView.removeFromSuperview()
         let activePlayer = self.awayTeam!.players[index]
         let substitudePlayer = self.awayTeam!.players[replacePlayerIndex]

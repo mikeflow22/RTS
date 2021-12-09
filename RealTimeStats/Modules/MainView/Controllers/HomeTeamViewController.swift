@@ -237,6 +237,9 @@ extension HomeTeamViewController: UITableViewDelegate {
     
     /// Replace active player with subsitution player
     func replacePlayer(index: Int) {
+        guard index >= 0 else {
+            return
+        }
         
         self.substitutionView.removeFromSuperview()
         let activePlayer = self.homeTeam!.players[index]

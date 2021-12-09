@@ -403,7 +403,7 @@ class MainVC: UIViewController {
         if let breaks = self.breaks, let time = gameTimeLabel.convertToDouble() {
             ///ActionViewModel/Controller
             let action = Action(breaks: breaks, time: time, stat: withStat)
-            print("ActionCaptured: \(action)")
+            print("ActionCaptured: \(action.stat.rawValue)")
             return action
             //            return Action(breaks: breaks, time: time, stat: withStat)
         } else {
@@ -726,18 +726,34 @@ extension MainVC: CourtDelegate {
     // CourtView's width and height, not as absolute values. This function shows how to place a subview in the court area
     // using those values.
     func hitRegistered(hit: Shot) {
+        //        let shot = Shot(location: CGPoint(x: 453.0, y: 245.94), stats: .missedA3pt, success: false)
+        //        let shotAction = Action(breaks: .quarters, time: 00.00, stat: shot.stats, shot: shot)
+//        let action = captureAction(withStat: .offFoul)
+//        passActionToHomeTeam?.actionToPass(action)
+//        passActionToAwayTeam?.actionToPass(action)
         //courtHit is a shot
         //add shot to player array - this is done in the Teams' View Controller
         //we add the shot to the action to send to the teamVCs
         if hit.stats == .madeA2pt {
             addBall(withColor: .green, text: "\(hit.points)", textColor: .black, x: hit.x, y: hit.y)
+            sendShotAction(hit: hit)
         } else if hit.stats == .missedA2pt {
             addBall(withColor: .red, text: "X", textColor: .white, x: hit.x, y: hit.y)
+            sendShotAction(hit: hit)
         } else if hit.stats == .madeA3pt {
             addBall(withColor: .green, text: "\(hit.points)", textColor: .black, x: hit.x, y: hit.y)
+            sendShotAction(hit: hit)
         } else if hit.stats == .missedA3pt {
             addBall(withColor: .red, text: "X", textColor: .white, x: hit.x, y: hit.y)
+            sendShotAction(hit: hit)
         }
+    }
+    
+    func sendShotAction(hit: Shot) {
+        let action = captureAction(withStat: hit.stats)
+        action.shot = hit
+        passActionToAwayTeam?.actionToPass(action)
+        passActionToHomeTeam?.actionToPass(action)
     }
     
 }

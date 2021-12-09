@@ -52,7 +52,7 @@ class Action {
     let breaks: Breaks
     let time: Double
     let stat: Stats
-    let shot: Shot?
+    var shot: Shot?
     
     init(breaks: Breaks, time: Double, stat: Stats, shot: Shot? = nil) {
         self.breaks = breaks

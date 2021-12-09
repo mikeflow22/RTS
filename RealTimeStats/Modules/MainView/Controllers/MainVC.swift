@@ -13,7 +13,7 @@ enum Segments {
     case completed
 }
 
-enum Breaks: Int {
+enum Breaks: Int, Codable {
     case halves = 2
     case quarters = 4
 }
@@ -322,6 +322,8 @@ class MainVC: UIViewController {
     
     //MARK: - VIEW LOAD
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
         courtView.delegate = self
         setUPMockTournament()

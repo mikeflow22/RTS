@@ -6,17 +6,19 @@
 //
 
 import Foundation
+struct Bearer: Codable {
+    let token: String
+}
 
 class TournamentController {
     static let shared = TournamentController()
-    var tournaments = [Tournament]()
+    
     var currentTournament: Tournament?
     
     func createTournament(withName name: String) {
         let tournament = Tournament(name: name)
         currentTournament = tournament
-        tournaments.append(tournament)
-        print("tournament count: \(self.tournaments.count)")
+        print("tournament just created: \(String(describing: self.currentTournament))")
     }
     
     func addRulesTo(_ rule: Rule) {

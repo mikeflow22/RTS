@@ -6,19 +6,19 @@
 //
 
 import UIKit
-enum Quarter: String {
+enum Quarter: String, Codable {
     case q1 = "Q1"
     case q2 = "Q2"
     case q3 = "Q3"
     case q4 = "Q4"
 }
 
-enum Halves: String {
+enum Halves: String, Codable {
     case h1 = "H1"
     case h2 = "H2"
 }
 
-enum Stats: String {
+enum Stats: String, Codable {
     case offFoul = "Called for a charging foul"
     case defFoul = "Committed defensive foul"
     case oRebound = "Grabbed an O-Rebound"
@@ -48,7 +48,7 @@ enum ShotType: Int {
     case threePoints = 3
 }
 
-class Action {
+class Action: Codable {
     let breaks: Breaks
     let time: Double
     let stat: Stats
@@ -62,7 +62,7 @@ class Action {
     }
 }
 
-struct Play {
+struct Play: Codable {
     let player: Player
     let action: Action
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Tournament: Equatable {
+class Tournament: Equatable, Codable {
     static func == (lhs: Tournament, rhs: Tournament) -> Bool {
         lhs.name == rhs.name
     }

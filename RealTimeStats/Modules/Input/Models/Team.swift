@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Team: Equatable {
+class Team: Equatable, Codable {
     static func == (lhs: Team, rhs: Team) -> Bool {
         lhs.name == rhs.name && lhs.grade == rhs.grade
     }
@@ -44,7 +44,7 @@ class Team: Equatable {
 extension Team {
 }
 
-class Game {
+class Game: Codable {
     let homeTeam: Team
     let awayTeam: Team
     init(homeTeam: Team, awayTeam: Team) {
@@ -53,7 +53,7 @@ class Game {
     }
 }
 
-class TeamStat {
+class TeamStat: Codable {
 //    var possessions: Int
 //    var timeOuts: Int
 //    var wins: Int

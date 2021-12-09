@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Rule {
+struct Rule: Codable {
     let halves: Int
     let timePerHalf: Double
     let foulLimit: Int

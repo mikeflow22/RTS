@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Player {
+class Player: Codable {
     let name: String
     let number: Int
 //    let position: String

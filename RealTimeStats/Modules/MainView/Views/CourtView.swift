@@ -8,7 +8,7 @@
 import UIKit
 
 //CourtHit is the new Shot
-struct Shot {
+struct Shot :Codable {
     var x: CGFloat
     var y: CGFloat
     var points: Int

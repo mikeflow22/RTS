@@ -189,7 +189,7 @@ extension AwayTeamViewController: UITableViewDelegate {
         /// Added By Debbi
         if self.isSubstitutionViewOpen {
            self.selectedPlayerRow = indexPath.row
-            print("selectedPlayerRow at indexPath.row" \(indexPath.row))
+            print("selectedPlayerRow at indexPath.row \(indexPath.row)")
            self.tableView.reloadData()
         }
         

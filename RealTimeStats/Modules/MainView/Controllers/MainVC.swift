@@ -680,5 +680,12 @@ class MainVC: UIViewController {
         return String(format: "%02i : %02i", minutes, seconds)
     }
     
+    @IBAction func homeTeamStatsBtnPressed(_ sender: Any) {
+        print("home team stats clickable")
+    }
+    
+    @IBAction func awayTeamStatsBtnPressed(_ sender: Any) {
+        print("away team stats clickable")
+    }
     
 }

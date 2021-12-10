@@ -102,6 +102,7 @@ extension TournamentController {
             }
             
             //decode data into
+            print("this is the data that was returned: \(data)")
         }
     }
 }

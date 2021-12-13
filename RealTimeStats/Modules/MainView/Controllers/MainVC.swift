@@ -346,6 +346,12 @@ class MainVC: UIViewController {
         topSegmentView.addSubview(imgTopSegmentBottomBorder)
         awayTeamButtonAttributes.isSelected = true
     }
+
+    //MARK: - VIEW WILL APPEAR
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
     
     //MARK: - LAYOUT SUBVIEWS
     override func viewWillLayoutSubviews() {
@@ -682,6 +688,8 @@ class MainVC: UIViewController {
     
     @IBAction func homeTeamStatsBtnPressed(_ sender: Any) {
         print("home team stats clickable")
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TeamStatsViewController") as? TeamStatsViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     @IBAction func awayTeamStatsBtnPressed(_ sender: Any) {

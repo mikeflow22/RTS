@@ -60,6 +60,13 @@
 		BA499EA22742160600FEF909 /* PlayByPlayTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA499EA02742160600FEF909 /* PlayByPlayTVCell.xib */; };
 		BA499EB127422E5100FEF909 /* QuickStatsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA499EAF27422E5100FEF909 /* QuickStatsTVCell.swift */; };
 		BA499EB227422E5100FEF909 /* QuickStatsTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA499EB027422E5100FEF909 /* QuickStatsTVCell.xib */; };
+		BA7E524F276725D80049112C /* TeamStatsCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7E524D276725D80049112C /* TeamStatsCVCell.swift */; };
+		BA7E5250276725D80049112C /* TeamStatsCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA7E524E276725D80049112C /* TeamStatsCVCell.xib */; };
+		BA7E525227672C960049112C /* TeamStats+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7E525127672C960049112C /* TeamStats+Table.swift */; };
+		BA7E525427672CFA0049112C /* TeamStats+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7E525327672CFA0049112C /* TeamStats+Collection.swift */; };
+		BA7E5257276752120049112C /* TeamStatsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7E5255276752120049112C /* TeamStatsTVCell.swift */; };
+		BA7E5258276752120049112C /* TeamStatsTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA7E5256276752120049112C /* TeamStatsTVCell.xib */; };
+		BA8E12212763869700D2DFC4 /* TeamStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E12202763869700D2DFC4 /* TeamStatsViewController.swift */; };
 		BA9EFE40273CF0DB00F4EA29 /* SubstitutionPlayerModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9EFE3F273CF0DB00F4EA29 /* SubstitutionPlayerModal.swift */; };
 		BA9EFE42273CF1D500F4EA29 /* AttributeStringMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9EFE41273CF1D500F4EA29 /* AttributeStringMaker.swift */; };
 		BA9EFE46273CF84500F4EA29 /* PlayerTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9EFE44273CF84500F4EA29 /* PlayerTVCell.swift */; };
@@ -127,6 +134,13 @@
 		BA499EA02742160600FEF909 /* PlayByPlayTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayByPlayTVCell.xib; sourceTree = "<group>"; };
 		BA499EAF27422E5100FEF909 /* QuickStatsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickStatsTVCell.swift; sourceTree = "<group>"; };
 		BA499EB027422E5100FEF909 /* QuickStatsTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickStatsTVCell.xib; sourceTree = "<group>"; };
+		BA7E524D276725D80049112C /* TeamStatsCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamStatsCVCell.swift; sourceTree = "<group>"; };
+		BA7E524E276725D80049112C /* TeamStatsCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamStatsCVCell.xib; sourceTree = "<group>"; };
+		BA7E525127672C960049112C /* TeamStats+Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamStats+Table.swift"; sourceTree = "<group>"; };
+		BA7E525327672CFA0049112C /* TeamStats+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamStats+Collection.swift"; sourceTree = "<group>"; };
+		BA7E5255276752120049112C /* TeamStatsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamStatsTVCell.swift; sourceTree = "<group>"; };
+		BA7E5256276752120049112C /* TeamStatsTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamStatsTVCell.xib; sourceTree = "<group>"; };
+		BA8E12202763869700D2DFC4 /* TeamStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamStatsViewController.swift; sourceTree = "<group>"; };
 		BA9EFE3F273CF0DB00F4EA29 /* SubstitutionPlayerModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubstitutionPlayerModal.swift; sourceTree = "<group>"; };
 		BA9EFE41273CF1D500F4EA29 /* AttributeStringMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeStringMaker.swift; sourceTree = "<group>"; };
 		BA9EFE44273CF84500F4EA29 /* PlayerTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTVCell.swift; sourceTree = "<group>"; };
@@ -350,6 +364,7 @@
 			children = (
 				1BDE05552752CA800024576A /* Input */,
 				1B969C272733F01200C456A2 /* MainView */,
+				BA7E524A276723FD0049112C /* TeamStats */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -364,6 +379,36 @@
 				BA425E242749540300E94209 /* HomeTeamViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BA7E524A276723FD0049112C /* TeamStats */ = {
+			isa = PBXGroup;
+			children = (
+				BA7E524B2767241F0049112C /* Controllers */,
+				BA7E524C2767246F0049112C /* TableCells */,
+			);
+			path = TeamStats;
+			sourceTree = "<group>";
+		};
+		BA7E524B2767241F0049112C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BA8E12202763869700D2DFC4 /* TeamStatsViewController.swift */,
+				BA7E525127672C960049112C /* TeamStats+Table.swift */,
+				BA7E525327672CFA0049112C /* TeamStats+Collection.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BA7E524C2767246F0049112C /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				BA7E524D276725D80049112C /* TeamStatsCVCell.swift */,
+				BA7E524E276725D80049112C /* TeamStatsCVCell.xib */,
+				BA7E5255276752120049112C /* TeamStatsTVCell.swift */,
+				BA7E5256276752120049112C /* TeamStatsTVCell.xib */,
+			);
+			path = TableCells;
 			sourceTree = "<group>";
 		};
 		BA9EFE3E273CF0CE00F4EA29 /* Models */ = {
@@ -524,10 +569,12 @@
 				1B85C70D274F235300D658C1 /* FindTeamTableViewCell.xib in Resources */,
 				1B71CBA9272FF0A700A782FE /* PlayByPlayTableViewCell.xib in Resources */,
 				BA04F47E273A399D00376D8E /* SFProText-Regular.ttf in Resources */,
+				BA7E5258276752120049112C /* TeamStatsTVCell.xib in Resources */,
 				BA04F47C273A399200376D8E /* SFProText-Light.ttf in Resources */,
 				1B415C3C27248E8E0091E342 /* LaunchScreen.storyboard in Resources */,
 				1B415C3927248E8E0091E342 /* Assets.xcassets in Resources */,
 				1B85C705274E736500D658C1 /* AddPlayerTableViewCell.xib in Resources */,
+				BA7E5250276725D80049112C /* TeamStatsCVCell.xib in Resources */,
 				BA499EB227422E5100FEF909 /* QuickStatsTVCell.xib in Resources */,
 				1BDFB6D6274C4D5100609CC0 /* Input.storyboard in Resources */,
 				1B415C3727248E8C0091E342 /* Main.storyboard in Resources */,
@@ -551,6 +598,7 @@
 				BA9EFE46273CF84500F4EA29 /* PlayerTVCell.swift in Sources */,
 				1BDFB6DC274C532700609CC0 /* Rule.swift in Sources */,
 				BA425E1F274934FA00E94209 /* PlayByPlayVC.swift in Sources */,
+				BA7E524F276725D80049112C /* TeamStatsCVCell.swift in Sources */,
 				1B969C2927353F9800C456A2 /* Team.swift in Sources */,
 				1BDFB6DF274C63DF00609CC0 /* TournamentController.swift in Sources */,
 				1B2B82DD27300B9F00AD3511 /* PlayByPlayViewController.swift in Sources */,
@@ -577,11 +625,15 @@
 				1B415C3427248E8C0091E342 /* MainViewController1.swift in Sources */,
 				BA0241FD2759E20600B4B770 /* SubstitutionView.swift in Sources */,
 				BA499EA12742160600FEF909 /* PlayByPlayTVCell.swift in Sources */,
+				BA7E525427672CFA0049112C /* TeamStats+Collection.swift in Sources */,
+				BA8E12212763869700D2DFC4 /* TeamStatsViewController.swift in Sources */,
 				1B415C3027248E8C0091E342 /* AppDelegate.swift in Sources */,
 				1B415C3227248E8C0091E342 /* SceneDelegate.swift in Sources */,
 				1BDFB6DA274C52EA00609CC0 /* Tournament.swift in Sources */,
 				1BDFB6E9274C99BD00609CC0 /* CreateGameViewController.swift in Sources */,
 				1B85C70C274F235300D658C1 /* FindTeamTableViewCell.swift in Sources */,
+				BA7E5257276752120049112C /* TeamStatsTVCell.swift in Sources */,
+				BA7E525227672C960049112C /* TeamStats+Table.swift in Sources */,
 				BA9EFE42273CF1D500F4EA29 /* AttributeStringMaker.swift in Sources */,
 				1B3A58AC2725FF1500B2A276 /* HomeTeamPlayerVC.swift in Sources */,
 				1B85C704274E736500D658C1 /* AddPlayerTableViewCell.swift in Sources */,

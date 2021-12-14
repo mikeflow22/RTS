@@ -6,19 +6,21 @@
 //
 
 import UIKit
+import MessageUI
 
 class TeamStatsViewController: UIViewController {
     
     //MARK: IBOUTLET'S
     
-    /// Header View
-    @IBOutlet weak var headerView: UIView!{
+    /// Team name
+    @IBOutlet weak var teamNameLbl: UILabel! {
         didSet {
-            //headerView.backgroundColor = .white
-            //headerView.alpha = 0.8
-            //headerView.layer.backgroundColor = UIColor(red: 0.756, green: 0.985, blue: 1, alpha: 0.42).cgColor
+            teamNameLbl.text = self.teamObj?.name
         }
     }
+    
+    /// Header View
+    @IBOutlet weak var headerView: UIView!
     
     /// Team stats collection view
     @IBOutlet weak var teamStatsCollectionView: UICollectionView!{
@@ -64,7 +66,7 @@ class TeamStatsViewController: UIViewController {
         let btn1 = UIButton(type: .custom)
         btn1.setImage(UIImage(named: "Menu"), for: .normal)
         btn1.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        btn1.addTarget(self, action: #selector(TeamStatsViewController.manuBtnPressed), for: .touchUpInside)
+        btn1.addTarget(self, action: #selector(TeamStatsViewController.menuBtnPressed), for: .touchUpInside)
         let item1 = UIBarButtonItem(customView: btn1)
         
         let btn2 = UIButton(type: .custom)
@@ -76,12 +78,39 @@ class TeamStatsViewController: UIViewController {
     }
     
     //MARK: IBACTIONS
-    @objc func manuBtnPressed() {
-        
+    @objc func menuBtnPressed() {
     }
     
     @objc func shareBtnPressed() {
+        showMailComposer()
+    }
+    
+    /// Share to email address
+    func showMailComposer(){
         
+        guard MFMailComposeViewController.canSendMail() else {
+            print("Mail not working on simulator. Check in real device")
+            return
+        }
+        let composer = MFMailComposeViewController()
+        composer.mailComposeDelegate = self
+        composer.setToRecipients(["abc@gmail.com"]) // email id of the recipient
+        composer.setSubject("Real Time Stats")
+        composer.setMessageBody("Team Stats", isHTML: false)
+        present(composer, animated: true, completion: nil)
+    }
+}
+
+//MARK: Mail composer delegate method
+extension TeamStatsViewController: MFMailComposeViewControllerDelegate {
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        if let _ = error {
+            print(error?.localizedDescription as Any)
+            controller.dismiss(animated: true, completion: nil)
+            return
+        }
+        controller.dismiss(animated: true, completion: nil)
     }
     
 }

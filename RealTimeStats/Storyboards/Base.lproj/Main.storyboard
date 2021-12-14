@@ -1655,6 +1655,7 @@
                     </view>
                     <connections>
                         <outlet property="headerView" destination="Ozc-AO-3Ma" id="X9N-2o-sXc"/>
+                        <outlet property="teamNameLbl" destination="1c4-qM-Iys" id="JHj-J1-oWy"/>
                         <outlet property="teamStatsCollectionView" destination="bnW-jl-f6u" id="hGH-U0-Tfd"/>
                         <outlet property="teamStatsTableView" destination="pCH-7G-vkJ" id="gFW-Wu-EBq"/>
                     </connections>

@@ -688,12 +688,17 @@ class MainVC: UIViewController {
     
     @IBAction func homeTeamStatsBtnPressed(_ sender: Any) {
         print("home team stats clickable")
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TeamStatsViewController") as? TeamStatsViewController
-        self.navigationController?.pushViewController(vc!, animated: true)
+        let destVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TeamStatsViewController") as? TeamStatsViewController
+        destVC?.teamObj = MockTeams.homeTeam
+        self.navigationController?.pushViewController(destVC!, animated: true)
     }
     
     @IBAction func awayTeamStatsBtnPressed(_ sender: Any) {
         print("away team stats clickable")
+        let destVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TeamStatsViewController") as? TeamStatsViewController
+        destVC?.teamObj = MockTeams.awayTeam
+        self.navigationController?.pushViewController(destVC!, animated: true)
+        
     }
     
 }

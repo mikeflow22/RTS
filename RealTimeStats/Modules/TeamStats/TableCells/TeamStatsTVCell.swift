@@ -9,6 +9,10 @@ import UIKit
 
 class TeamStatsTVCell: UITableViewCell {
 
+    //MARK: IBOUTLET'S
+    ///Player Name
+    @IBOutlet weak var playerNameLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

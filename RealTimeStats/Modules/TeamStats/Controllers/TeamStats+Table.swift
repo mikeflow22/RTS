@@ -13,7 +13,7 @@ extension TeamStatsViewController: UITableViewDataSource {
     
     /// Number Of Rows In Section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return teamObj?.players.count ?? 0
     }
     
     /// Cell For Row At indexPath
@@ -36,6 +36,8 @@ extension TeamStatsViewController: UITableViewDataSource {
     ///   - indexPath: IndexPath
     func TeamStatsCell(cell: TeamStatsTVCell,team: Team, indexPath: IndexPath) {
         print(indexPath.row)
+        let teamPlayerObj = team.players[indexPath.row]
+        cell.playerNameLbl.text = teamPlayerObj.name
     }
     
     

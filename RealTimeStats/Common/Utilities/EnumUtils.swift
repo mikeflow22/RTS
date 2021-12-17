@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-//MARK:- Device Constraints
+//MARK: Device Constraints
 ///Extented further in EnumUtil.swift class
 enum Screen {}
 
@@ -30,3 +30,24 @@ extension Screen {
     /// Is device Ipad?
     static let isIPAD: Bool = deviceIdiom == UIUserInterfaceIdiom.pad ? true : false
 }
+
+//MARK: View Controller Extension
+extension UIViewController {
+    
+    func showCustomAlert(view: UIViewController, title: String, message: String, completion: @escaping( _ choice: Bool)  -> Void) {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let noAction = UIAlertAction(title: "No", style: .destructive, handler: { action in
+                completion(false)
+            })
+            let yesAction = UIAlertAction(title: "Yes", style: .default, handler: { action in
+                completion(true)
+            })
+            alert.addAction(noAction)
+            alert.addAction(yesAction)
+            DispatchQueue.main.async(execute: {
+                view.present(alert, animated: true)
+            })
+        }
+}
+    
+

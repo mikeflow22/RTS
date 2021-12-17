@@ -336,6 +336,12 @@ class MainVC: UIViewController {
         awayTeamButtonAttributes.isSelected = true
     }
     
+    //MARK: - VIEW WILL APPEAR
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     //MARK: - LAYOUT SUBVIEWS
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -635,6 +641,21 @@ class MainVC: UIViewController {
     
     @IBAction func gameTimerBtnPressed(_ sender: Any) {
         runGameTimer()
+    }
+    
+    @IBAction func homeTeamStatsBtnPressed(_ sender: Any) {
+        print("home team stats clickable")
+        let destVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TeamStatsViewController") as? TeamStatsViewController
+        destVC?.teamObj = MockTeams.homeTeam
+        self.navigationController?.pushViewController(destVC!, animated: true)
+    }
+    
+    @IBAction func awayTeamStatsBtnPressed(_ sender: Any) {
+        print("away team stats clickable")
+        let destVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TeamStatsViewController") as? TeamStatsViewController
+        destVC?.teamObj = MockTeams.awayTeam
+        self.navigationController?.pushViewController(destVC!, animated: true)
+        
     }
     
     //MARK: - Game Timer

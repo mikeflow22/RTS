@@ -68,25 +68,33 @@ class TeamStatsViewController: UIViewController {
         btn1.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         btn1.addTarget(self, action: #selector(TeamStatsViewController.menuBtnPressed), for: .touchUpInside)
         let item1 = UIBarButtonItem(customView: btn1)
-        
-        let btn2 = UIButton(type: .custom)
-        btn2.setImage(UIImage(named: "Share"), for: .normal)
-        btn2.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        btn2.addTarget(self, action: #selector(TeamStatsViewController.shareBtnPressed), for: .touchUpInside)
-        let item2 = UIBarButtonItem(customView: btn2)
-        self.navigationItem.setRightBarButtonItems([item1,item2], animated: true)
+        self.navigationItem.setRightBarButtonItems([item1], animated: true)
     }
     
     //MARK: IBACTIONS
     @objc func menuBtnPressed() {
     }
     
-    @objc func shareBtnPressed() {
-        showMailComposer()
+    //MARK: Share Stats
+    func shareStats(cell: TeamStatsTVCell) {
+        
+        /// Create the player stats content
+        let emailBody = "Player: \(cell.playerNameLbl.text! ) \nPts: \(cell.ptsLbl.text! ) \n2FG: \(cell.twoFgLbl.text! ) \n3FG: \(cell.threeFgLbl.text! ) \nReb: \(cell.rebLbl.text! ) \nAst: \(cell.astLbl.text! ) \nStl: \(cell.stlLbl.text! ) \nBIK: \(cell.bikLbl.text! ) \nTo: \(cell.toLbl.text! ) \nD-eff: \(cell.deffLbl.text! ) \nO-eff: \(cell.oeffLbl.text! ) \nPER: \(cell.perLbl.text! )"
+        
+        /// Share player stats
+        self.showCustomAlert(view: self, title: "Are you sure?", message: "You want to share \(cell.playerNameLbl!.text ?? "") stats?") { choice in
+            if choice {
+                self.showMailComposer(subject: "\(cell.playerNameLbl.text! ) real time stats", body: emailBody)
+            }
+        }
+        
     }
     
     /// Share to email address
-    func showMailComposer(){
+    func showMailComposer(subject: String,body: String){
+        
+        print("Email subject:- \(subject)")
+        print("Email body:-\n\(body)")
         
         guard MFMailComposeViewController.canSendMail() else {
             print("Mail not working on simulator. Check in real device")
@@ -95,8 +103,8 @@ class TeamStatsViewController: UIViewController {
         let composer = MFMailComposeViewController()
         composer.mailComposeDelegate = self
         composer.setToRecipients(["abc@gmail.com"]) // email id of the recipient
-        composer.setSubject("Real Time Stats")
-        composer.setMessageBody("Team Stats", isHTML: false)
+        composer.setSubject(subject)
+        composer.setMessageBody(body, isHTML: false)
         present(composer, animated: true, completion: nil)
     }
 }

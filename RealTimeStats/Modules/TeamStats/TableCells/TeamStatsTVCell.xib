@@ -143,7 +143,18 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="astLbl" destination="wpg-Ie-7Jv" id="X2x-v7-uqV"/>
+                <outlet property="bikLbl" destination="8qA-if-5mD" id="hGE-1d-m6c"/>
+                <outlet property="deffLbl" destination="Ejs-0J-r8C" id="EC5-sc-meK"/>
+                <outlet property="oeffLbl" destination="6la-q2-nmo" id="QBZ-hW-Due"/>
+                <outlet property="perLbl" destination="Iwm-Xh-Sfw" id="Ylt-K1-wvu"/>
                 <outlet property="playerNameLbl" destination="R5o-gM-uGe" id="FGA-Ev-pj6"/>
+                <outlet property="ptsLbl" destination="eGa-y5-Nvv" id="fWm-u7-ho5"/>
+                <outlet property="rebLbl" destination="niT-4w-iGS" id="g2D-2p-mil"/>
+                <outlet property="stlLbl" destination="4OU-qd-Wgn" id="Deg-OB-5Ol"/>
+                <outlet property="threeFgLbl" destination="a1u-aI-mQM" id="hbv-M2-e8y"/>
+                <outlet property="toLbl" destination="0bg-N7-9k0" id="SuA-Ea-5nP"/>
+                <outlet property="twoFgLbl" destination="LuF-wR-ym1" id="m2Y-wE-MkP"/>
             </connections>
             <point key="canvasLocation" x="-22.463768115942031" y="64.955357142857139"/>
         </tableViewCell>

@@ -48,7 +48,10 @@ extension TeamStatsViewController: UITableViewDelegate {
     
     /// Did Select Row At indexPath
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        
+        let indexPath = tableView.indexPathForSelectedRow
+        let currentCell = tableView.cellForRow(at: indexPath!) as! TeamStatsTVCell
+        self.shareStats(cell: currentCell)
     }
     
     /// Height For Row At indexPath
